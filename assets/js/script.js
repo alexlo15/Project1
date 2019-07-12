@@ -6,6 +6,7 @@ $(document).ready(function () {
         e.preventDefault();
         // This will print artist name from textbox and append to musicDiv
         var trackArtist = $("<h1>");
+        trackArtist.addClass('artistHeadling');
         var artistName = $("#txtArtistName").val().trim();
         trackArtist.text(artistName);
         $("#musicDiv").append(trackArtist);
