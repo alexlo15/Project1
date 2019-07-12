@@ -1,0 +1,29 @@
+#musicDiv {
+    float: left;
+    width: 50%;
+}
+
+#lyricDiv {
+    float: right;
+    width: 48%;
+}
+
+iframe {
+    width: 600px;
+    height: 800px;
+    margin-top: 10px;
+}
+
+a {
+    color: blue;
+    cursor: pointer;
+}
+#artistImage{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    /* visibility: hidden; */
+    display: none;
+    /* display: inline-block; */
+}
