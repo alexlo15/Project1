@@ -1,0 +1,64 @@
+#musicDiv {
+    float: left;
+    width: 50%;
+}
+
+#lyricDiv {
+    float: right;
+    width: 48%;
+}
+
+iframe {
+    width: 600px;
+    height: 800px;
+    margin-top: 10px;
+}
+
+a {
+    color: blue;
+    cursor: pointer;
+}
+
+
+
+/* alexs after here */
+
+body{
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+.navbar-brand{
+display: inline;
+
+}
+
+
+
+/* little spot logo top left */
+#spot{
+    width: 5%;
+    height: 5%;;
+    transform: rotate(180deg);
+}
+
+/* background white, borders, spacing for the content sections */
+.sect{
+    background: white;
+    border: solid black 3px;
+    padding: 10px;
+    
+}
+
+/* spacing for the top two columns from the navbar */
+.vid, .lyrics{
+    margin-top: 10px;
+}
+
+#nowplaying{
+    margin-top: 10px;
+    background: white;
+    border: solid black 3px;
+    padding: 10px;
+    
+}

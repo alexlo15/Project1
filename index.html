@@ -5,104 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        #musicDiv {
-            float: left;
-            width: 50%;
-        }
-
-        #lyricDiv {
-            float: right;
-            width: 48%;
-        }
-
-        iframe {
-            width: 600px;
-            height: 800px;
-            margin-top: 10px;
-        }
-
-        a {
-            color: blue;
-            cursor: pointer;
-        }
-    </style>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Jankify</title>
 </head>
 
 <body>
-    <div id="musicDiv">
-        <h3>Enter Artist Name :</h3>
-        <input type="text" id="txtArtistName">
-        <button id="btnGetTracks">Get Tracks</button>
+    <nav class="navbar navbar-light" style="background-color: #52ce00;">
+
+        <a class="navbar-brand"><img id="spot" src="assets/images/spot.jpg"><h1>Spatify</h1><h2>Spotify for cheapos!</h2></a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-5">
+
+                <div id=nowplaying class="row">
+                    <div class="col-md-12">
+                        <div id="musicDiv">
+                            <h2>Spotify for cheapos!</h2>
+                            <h3>Enter Artist Name :</h3>
+                            <input type="text" id="txtArtistName">
+                            <button id="btnGetTracks">Get Tracks</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="sect row">
+                    <div class="col-lg-12">
+                        <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">List-based media object</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- DIVIDER COLUMN -->
+            <div class="col-lg-1"></div>
+
+            <div class="lyrics col-lg-6">
+
+                <div id="lyricDiv">
+                    lyrics will appear here
+                    <!-- Dynamically lyric will be displayed here -->
+                </div>
+                <div class="sect" id="player"></div>
+
+
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="sect col-md-12">
+                TICKET MASTER OR EVENT API HERE
+
+
+            </div>
+        </div>
+
     </div>
-    <div id="lyricDiv">
-        <!-- Dynamically lyric will be displayed here -->
-    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-
-
-        $("#btnGetTracks").on('click', function (e) {
-
-            e.preventDefault();
-            var trackArtist = $("<h1>");
-            var artistName = $("#txtArtistName").val().trim();
-            // alert(artistName)
-            trackArtist.text(artistName);
-            $("#musicDiv").append(trackArtist);
-            var queryUrl =
-                'http://api.musixmatch.com/ws/1.1/track.search?q_artist=' + artistName +
-                '&page_size=10&page=1&s_track_rating=desc&apikey=71f00284b464247092304a810bf79866'
-            $.ajax({
-                url: "https://cors-anywhere.herokuapp.com/" + queryUrl,
-                method: 'GET',
-            }).then(function (response) {
-                var obj = JSON.parse(response);
-                console.log(obj);
-                // loop to display all tracks of the artist
-                for (var i = 0; i < obj.message.body.track_list.length; i++) {
-                    var iframeTrack = $("<iframe>");
-
-                    var trackAlbumName = $("<h2>");
-                    var trackName = $("<p>");
-
-                    trackAlbumName.text("Track Album Name : " + obj.message.body.track_list[i]
-                        .track
-                        .album_name);
-                    trackName.text("Track Name : " + obj.message.body.track_list[i].track
-                        .track_name);
-
-                    $("#musicDiv").append(trackAlbumName, trackName);
-                    // trackArtist
-                    // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
-                    var trackUrl = $("<a>", {
-                        'id': 'trackUrl',
-                        'data-trackUrl': obj.message.body.track_list[i].track
-                            .track_share_url
-                    }).text("Click Me to play").click(function () {
-                        var trackDisplayUrl = $(this).attr('data-trackUrl');
-                        iframeTrack.attr('src', trackDisplayUrl);
-                        $("#lyricDiv").append(iframeTrack);
-                    });
-
-
-                    $("#musicDiv").append(trackUrl);
-
-                    var imageQueryURL = "https://rest.bandsintown.com/artists/" + artistName + "?app_id=codingbootcamp";
-
-                }
-                $("#musicDiv").trigger("click");
-                console.log("done");
-
-            });
-        })
-
-    })
-</script>
 
 </html>
 
