@@ -21,7 +21,7 @@ $(document).ready(function () {
             console.log(response);
             var artistImage = response.thumb_url;
             $("#artistImage").attr('src', artistImage);
-           
+
         })
 
         // --------------------------
@@ -71,4 +71,33 @@ $(document).ready(function () {
             $("#musicDiv").trigger("click");
 
         });
-    }) 
+    })
+
+    $("#checkEvent").on('click', function (e) {
+        e.preventDefault();
+        alert('on check event');
+
+        var artistName = $("#txtArtistName").val().trim();
+
+
+        $("#artistImage").show();
+
+        var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
+            "?app_id=70db470b-35d4-4cf4-8624-428f3b573263";
+        $.ajax({
+            url: eventQueryURL,
+            method: 'GET'
+        }).then(function (response) {
+            console.log(response);
+            var artistImage = response.thumb_url;
+            $("#artistImage").attr('src', artistImage);
+
+            var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+            var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+            $("#lyricDiv").prepend(upcomingEvents, goToArtist);
+        })
+    });
+
+
+
+})

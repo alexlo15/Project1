@@ -1,16 +1,16 @@
 #musicDiv {
     float: left;
-    width: 50%;
+    /* width: 50%; */
 }
 
 #lyricDiv {
     float: right;
-    width: 48%;
+    /* width: 48%; */
 }
 
 iframe {
-    width: 600px;
-    height: 800px;
+    width: auto;
+    height: auto;
     margin-top: 10px;
 }
 
@@ -19,7 +19,11 @@ a {
     cursor: pointer;
 }
 
-
+#artistImage{
+    width:100px;
+    height: 100px;
+    border:1px solid #000;
+}
 
 /* alexs after here */
 
