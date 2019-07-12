@@ -2,73 +2,105 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <style>
-       iframe{
-           width: 600px;
-           height: 600px;
-       }
-   </style>
-   <title>Spotify</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Jankify</title>
 </head>
 
 <body>
-   <div id="musicDiv">
-       <h1>Artist</h1>
-   </div>
+    <nav class="navbar navbar-light" style="background-color: #52ce00;">
+
+        <a class="navbar-brand"><img id="spot" src="assets/images/spot.jpg"><h1>Spatify</h1><h2>Spotify for cheapos!</h2></a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-5">
+
+                <div id=nowplaying class="row">
+                    <div class="col-md-12">
+                        <div id="musicDiv">
+                            <h2>Spotify for cheapos!</h2>
+                            <h3>Enter Artist Name: </h3>
+                            <img id="artistImage" src="" alt="Artist Image">
+                            <input type="text" id="txtArtistName">
+                            <!--Need to capitalize name of Arist-->
+                            <!-- $("#txtArtistName") = str.toCapitalize(); -->
+                            
+                            <!--Artist Info-->
+
+                            <button id="btnGetTracks">Get Tracks</button>
+                            <button id="checkEvent">Check Event</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="sect row">
+                    <div class="col-lg-12">
+                        <img class="mr-3" src="" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">List-based media object</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- DIVIDER COLUMN -->
+            <div class="col-lg-1"></div>
+
+            <div class="lyrics col-lg-6">
+
+                <div id="lyricDiv">
+                   
+                    <!-- Dynamically lyric will be displayed here -->
+                </div>
+                <div class="sect" id="player"></div>
+
+
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="sect col-md-12">
+                TICKET MASTER OR EVENT API HERE
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>
-   var queryUrl =
-       // 'http://api.musixmatch.com/ws/1.1/chart.artists.get?page=1&page_size=3&apikey=71f00284b464247092304a810bf79866'
-       // http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc
-
-       'http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc&apikey=71f00284b464247092304a810bf79866'
-
-
-   $.ajax({
-       url: "https://cors-anywhere.herokuapp.com/" + queryUrl,
-       method: 'GET',
-   }).then(function (response) {
-       var obj = JSON.parse(response);
-
-       console.log(obj);
-       // message.body.track_list[""0""].track.artist_name
-       var trackArtist = $("<h1>");
-       trackArtist.text("Track Artist Name : " +obj.message.body.track_list[0].track.artist_name )
-
-       // message.body.track_list[""0""].track.album_name
-       var trackAlbumName = $("<h2>");
-       trackAlbumName.text("Track Album Name : " + obj.message.body.track_list[0].track.album_name);
-
-       // message.body.track_list[""0""].track.track_name
-       var trackName = $("<h4>");
-       trackName.text("Track Name : " + obj.message.body.track_list[0].track.track_name);
-
-       // message.body.track_list[""0 ""].track.track_edit_url
-       var trackUrl = $("<a>");
-       trackUrl.attr('id','trackUrl');
-       // trackUrl.attr('href',obj.message.body.track_list[0].track.track_edit_url);
-       trackUrl.text("Click Me to play");
-
-       var iframeTrack = $("<iframe>");
-
-
-       console.log(obj.message.body.track_list[0].track.track_edit_url)
-
-       $("#musicDiv").append(trackArtist,trackAlbumName,trackName,trackUrl);
-
-       $("#musicDiv").on("click",$("#trackUrl"),function(){
-           alert("on click");
-           iframeTrack.attr('src',obj.message.body.track_list[0].track.track_edit_url)
-           $("#musicDiv").append(iframeTrack);
-       })
-
-       console.log("done");
-   });
-</script>
 
 </html>
+
+
+
+<!-- https://api.unsplash.com/ -->
+<!-- https://api.unsplash.com/photos/? -->
+<!-- GET /photos/:id -->
