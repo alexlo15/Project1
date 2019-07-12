@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <style>
+       iframe{
+           width: 600px;
+           height: 600px;
+       }
+   </style>
+   <title>Spotify</title>
+</head>
+
+<body>
+   <div id="musicDiv">
+       <h1>Artist</h1>
+   </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+   var queryUrl =
+       // 'http://api.musixmatch.com/ws/1.1/chart.artists.get?page=1&page_size=3&apikey=71f00284b464247092304a810bf79866'
+       // http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc
+
+       'http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc&apikey=71f00284b464247092304a810bf79866'
+
+
+   $.ajax({
+       url: "https://cors-anywhere.herokuapp.com/" + queryUrl,
+       method: 'GET',
+   }).then(function (response) {
+       var obj = JSON.parse(response);
+
+       console.log(obj);
+       // message.body.track_list[""0""].track.artist_name
+       var trackArtist = $("<h1>");
+       trackArtist.text("Track Artist Name : " +obj.message.body.track_list[0].track.artist_name )
+
+       // message.body.track_list[""0""].track.album_name
+       var trackAlbumName = $("<h2>");
+       trackAlbumName.text("Track Album Name : " + obj.message.body.track_list[0].track.album_name);
+
+       // message.body.track_list[""0""].track.track_name
+       var trackName = $("<h4>");
+       trackName.text("Track Name : " + obj.message.body.track_list[0].track.track_name);
+
+       // message.body.track_list[""0 ""].track.track_edit_url
+       var trackUrl = $("<a>");
+       trackUrl.attr('id','trackUrl');
+       // trackUrl.attr('href',obj.message.body.track_list[0].track.track_edit_url);
+       trackUrl.text("Click Me to play");
+
+       var iframeTrack = $("<iframe>");
+
+
+       console.log(obj.message.body.track_list[0].track.track_edit_url)
+
+       $("#musicDiv").append(trackArtist,trackAlbumName,trackName,trackUrl);
+
+       $("#musicDiv").on("click",$("#trackUrl"),function(){
+           alert("on click");
+           iframeTrack.attr('src',obj.message.body.track_list[0].track.track_edit_url)
+           $("#musicDiv").append(iframeTrack);
+       })
+
+       console.log("done");
+   });
+</script>
+
+</html>
