@@ -1,3 +1,6 @@
+var artistName = ""; 
+ 
+ 
  $(document).ready(function () {
 
 
@@ -5,7 +8,7 @@
 
             e.preventDefault();
             var trackArtist = $("<h1>");
-            var artistName = $("#txtArtistName").val().trim();
+            artistName = $("#txtArtistName").val().trim();
             // alert(artistName)
             trackArtist.text(artistName);
             $("#musicDiv").append(trackArtist);
@@ -54,6 +57,47 @@
                 console.log("done");
 
             });
+
+            
+         
         })
 
     });
+var queryURL =
+            "https://app.ticketmaster.com/discovery/v2/events.json?" + 
+                "&apikey=tDbpfjWt10PW1rPAG9UEbkFGw7O3oQeS";
+            console.log(queryURL);
+
+    $.ajax({
+     url:queryURL,
+        method: "GET",
+    }).then(function(response){
+        // var obj = JSON.parse(response);
+        console.log(queryURL);
+        console.log(response);
+ 
+        console.log(response._embedded.events[0].name);
+        console.log()
+ 
+     // var results = response.data;
+ 
+     //    $("<p>").text()
+     //    // console.log(obj);
+         // stores the data from AJAX into the results variable
+         var results = response._embedded.events;
+                         // looping through each result item
+                         for (var i = 0; i < results.length; i++) {
+                             // creating & storing a div tag
+                             var eventsDiv = $("<div>");
+ 
+                             // creating a paragraph tag with the result item's rating
+                             var p = $("<p>").text("Events: " + results[i].name);
+                            //  var p = $("<p>").text("Time: " + results[i].dates.start.localDate);
+ 
+                             // appending the paragraph and image tag to the teamsDiv
+                             eventsDiv.append(p);
+                             
+ 
+                             // prepending the eventsDiv to the HTML page in the "tickets" div
+                             $(".tickets").prepend(eventsDiv);
+                         }});

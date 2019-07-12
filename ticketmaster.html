@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+
+   <p></p>
+
+   <!-- <script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript">
+
+   // $("p").text("Hello");
+
+   var queryURL =
+   "https://app.ticketmaster.com/discovery/v2/events.json?apikey=tDbpfjWt10PW1rPAG9UEbkFGw7O3oQeS";
+
+   $.ajax({
+    url:queryURL,
+       method: "GET",
+   }).then(function(response){
+       // var obj = JSON.parse(response);
+       console.log(queryURL);
+       console.log(response);
+
+       console.log(response._embedded.events[0].name);
+
+    // var results = response.data;
+
+    //    $("<p>").text()
+    //    // console.log(obj);
+        // stores the data from AJAX into the results variable
+        var results = response._embedded.events;
+                        // looping through each result item
+                        for (var i = 0; i < results.length; i++) {
+                            // creating & storing a div tag
+                            var eventsDiv = $("<div>");
+
+                            // creating a paragraph tag with the result item's rating
+                            var p = $("<p>").text("Results: " + results[i]);
+
+    //                         // // creating & storing a img tag
+    //                         // var teamImage = $("<img>");
+
+    //                         // // Setting the src attribute of the image to a property pulled off the result item
+    //                         // teamImage.attr("src", results[i].images.fixed_height.url);
+
+                            // appending the paragraph and image tag to the teamsDiv
+                            eventsDiv.append(p);
+                            
+
+                            // prepending the eventsDiv to the HTML page in the "tickets" div
+                            $("#tickets").prepend(eventsDiv);
+                }
+   });
+   </script>
+</body>
+</html>
