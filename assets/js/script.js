@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function () {
 
 
@@ -76,7 +75,6 @@ $(document).ready(function () {
     })
 
 })
-=======
  $(document).ready(function () {
 
 
@@ -136,4 +134,3 @@ $(document).ready(function () {
         })
 
     });
->>>>>>> master

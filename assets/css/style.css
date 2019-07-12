@@ -18,16 +18,6 @@ a {
     color: blue;
     cursor: pointer;
 }
-<<<<<<< HEAD
-#artistImage{
-    width: 200px;
-    height: 200px;
-    border: 2px solid #000;
-    border-radius: 50px;
-    /* visibility: hidden; */
-    display: none;
-    /* display: inline-block; */
-=======
 
 
 
@@ -71,5 +61,4 @@ display: inline;
     border: solid black 3px;
     padding: 10px;
     
->>>>>>> master
 }
