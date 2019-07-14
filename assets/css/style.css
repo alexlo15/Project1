@@ -16,9 +16,21 @@
 /* -----------------Navbar Styling------------------ */
 #spatifyHeader {
     display: inline-block;
+    font-size: 80px;
 }
-#cheaposHeaderLine {
-    margin-left: 5%;
+
+.player{
+    text-align: right;
+}
+
+h1, h2{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.fas, .fa-play-circle{
+    padding-top: 1%;
+    padding-right: 2%;
+    font-size: 175px;
 }
 /* -------------------------------------------------------- */
 #musicDiv {
@@ -102,8 +114,8 @@ body {
 #spot {
     width: 5%;
     height: 5%;
-    min-width:50px;
-    min-height: 50px;
+    min-width: 200px;
+    min-height: 200px;
     transform: rotate(180deg);
 }
 

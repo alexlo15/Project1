@@ -5,24 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/animation/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Jankify</title>
 </head>
+<!-- #41be6d -->
+<!-- #52ce00 -->
 
 <body>
-    <nav class="navbar navbar-light" style="background-color: #52ce00;">
-        <a class="navbar-brand">
-            <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s" src="assets/images/spot.jpg">
-            <h1 id="spatifyHeader" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">Spotify</h1>
-            <h2 id="cheaposHeaderLine" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">Spotify for cheapos!</h2>
-            <!-- song player widget -->
-            <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=ff0000&layout=dark&size=medium&type=tracks&id=" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="300" data-height="300"></div>
-
-            
-        </a>
+    <nav class="container-fluid" style="background-color: #41be6d;">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
+                    src="assets/images/spot.jpg">
+                <h1 id="spatifyHeader" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+                    Jankify
+                </h1>
+            </div>
+            <div class="col-md-6 player">
+                <!-- song player widget -->
+                <div class="deezer-widget-player"
+                    data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+                    data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
+                    data-height="200"></div>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
@@ -41,7 +51,7 @@
 
                         </div>
                         <div id="trackDiv" class="clear">
-                           
+
                             <!-- This div will hold the tracks and Image -->
                         </div>
                     </div>
@@ -91,7 +101,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="assets/js/WOW/wow.min.js"></script>
+    <script src="assets/js/WOW/wow.min.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>

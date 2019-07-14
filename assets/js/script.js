@@ -116,7 +116,7 @@ $(document).ready(function () {
                     }).then (function(response){
                         console.log(response.data[0].id);
 
-                        var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+                        var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
 
                         $(".deezer-widget-player").attr("data-src",songURL);
 
@@ -219,5 +219,15 @@ function widget() {
 	}
 };
 
+function initialWidget(){
+    $(".deezer-widget-player").attr('data-src',"");
+    $(".deezer-widget-player").html('<i class="fas fa-play-circle"></i>')
+    $(".deezer-widget-player").addClass("wow fadeInDown")
+    $(".deezer-widget-player").attr("data-wow-duration","3s");
+    $(".deezer-widget-player").attr('data-wow-display',".2s");
+    // widget();
+}
+
 // initial display of widget
-widget();
+initialWidget();
+// widget();
