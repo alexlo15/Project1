@@ -83,6 +83,7 @@ $(document).ready(function () {
                 trackName.text("Track : " + obj.message.body.track_list[i].track
                     .track_name);
 
+
                 $("#trackDiv").append(trackAlbumName, trackName);
 
                 // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
@@ -90,6 +91,8 @@ $(document).ready(function () {
                 trackUrl.attr('id', 'trackUrl');
                 trackUrl.attr('data-trackUrl', obj.message.body.track_list[i].track
                     .track_share_url)
+                trackUrl.attr('data-name', obj.message.body.track_list[i].track
+                .track_name);
 
                 trackUrl.text("Click Me For Lyrics")
                 trackUrl.click(function () {
@@ -101,6 +104,19 @@ $(document).ready(function () {
                     var trackDisplayUrl = $(this).attr('data-trackUrl');
                     iframeTrack.attr('src', trackDisplayUrl);
                     $("#lyricDiv").append(iframeTrack);
+
+                    //code for song widget
+                    var songName = $(this).attr('data-name');
+                    console.log(songName);
+
+                    var songURL = "https://api.deezer.com/search/track?q=" + songName;
+                    $.ajax({
+                        url: "https://cors-anywhere.herokuapp.com/" + songURL,
+                        method: "GET"
+                    }).then (function(response){
+                        console.log(response.data[0].id);
+                    });
+
                 });
 
 
@@ -177,3 +193,24 @@ $(document).ready(function () {
 
 
 })
+
+
+// function that needs to be put in order for the song widget to show up
+function widget() {
+	var w = document[typeof document.getElementsByClassName === 'function' ? 'getElementsByClassName' : 'querySelectorAll']('deezer-widget-player');
+	for (var i = 0, l = w.length; i < l; i++) {
+		w[i].innerHTML = '';
+		var el = document.createElement('iframe');
+		el.src = w[i].getAttribute('data-src');
+		el.scrolling = w[i].getAttribute('data-scrolling');
+		el.frameBorder = w[i].getAttribute('data-frameborder');
+		el.setAttribute('frameBorder', w[i].getAttribute('data-frameborder'));
+		el.allowTransparency = w[i].getAttribute('data-allowTransparency');
+		el.width = w[i].getAttribute('data-width');
+		el.height = w[i].getAttribute('data-height');
+		w[i].appendChild(el);
+	}
+};
+
+// initial display of widget
+widget();
