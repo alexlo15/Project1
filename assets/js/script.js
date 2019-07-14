@@ -1,14 +1,15 @@
 $(document).ready(function () {
 
-    $(function() {
+    $(function () {
         //animate on scroll
-        new WOW().init(); 
+        new WOW().init();
     });
 
     var trackArtist = $("<h1>");
 
 
     $("#btnGetTracks").on('click', function (e) {
+        initialWidget();
         var artistName = $("#txtArtistName").val().trim();
         e.preventDefault();
         $("#leftDiv").removeClass('col-sm-5');
@@ -70,6 +71,10 @@ $(document).ready(function () {
 
         function displayTrackFunction(obj) {
 
+            //used for song widget
+            var songArtistName = obj.message.body.track_list[0].track.artist_name;
+
+            //used for displaying track
             for (var i = 0; i < obj.message.body.track_list.length; i++) {
 
                 var trackAlbumName = $("<h2>");
@@ -92,7 +97,7 @@ $(document).ready(function () {
                 trackUrl.attr('data-trackUrl', obj.message.body.track_list[i].track
                     .track_share_url)
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
-                .track_name);
+                    .track_name);
 
                 trackUrl.text("Click Me For Lyrics")
                 trackUrl.click(function () {
@@ -100,12 +105,12 @@ $(document).ready(function () {
                     $("#rightDiv").addClass('col-sm-5');
                     $("#lyricDiv").empty();
                     var iframeTrack = $("<iframe>");
-                    iframeTrack.attr('id','iframeTrack')
+                    iframeTrack.attr('id', 'iframeTrack')
                     var trackDisplayUrl = $(this).attr('data-trackUrl');
                     iframeTrack.attr('src', trackDisplayUrl);
                     $("#lyricDiv").append(iframeTrack);
 
-                    //code for song widget
+                    //Code for song widget
                     var songName = $(this).attr('data-name');
                     console.log(songName);
 
@@ -113,14 +118,28 @@ $(document).ready(function () {
                     $.ajax({
                         url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
                         method: "GET"
-                    }).then (function(response){
+                    }).then(function (response) {
                         console.log(response.data[0].id);
+                        console.log(response.data[1].artist.name);
+                        console.log(songArtistName);
 
-                        var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+                        for (var i = 0; i < response.data.length; i++) {
+                            console.log(response.data[i].artist.name == songArtistName)
+                            if (response.data[i].artist.name == songArtistName) {
+                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
 
-                        $(".deezer-widget-player").attr("data-src",songURL);
+                                $(".deezer-widget-player").attr("data-src", songURL);
 
-                        widget();
+                                widget();
+
+                            }
+
+                            var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
+
+                            $(".deezer-widget-player").attr("data-src", songURL);
+
+                            widget();
+                        }
 
                     });
 
@@ -174,14 +193,14 @@ $(document).ready(function () {
 
             var upcomingEvents = $("<h2>").text("Upcoming events : " + response.upcoming_event_count);
             var goToArtist = $("<a>").text("See Tour Dates");
-            goToArtist.attr('id','eventCheckDate');
+            goToArtist.attr('id', 'eventCheckDate');
             goToArtist.click(function () {
-               
+
                 $("#lyricDiv").empty();
                 var iframeDiv = $("<div>");
                 var enventIframe = $("<iframe>");
                 enventIframe.attr('src', response.url);
-                enventIframe.attr('id','eventIFrame');
+                enventIframe.attr('id', 'eventIFrame');
                 iframeDiv.append(enventIframe);
 
                 // eventDiv.append(enventIframe);
@@ -204,30 +223,30 @@ $(document).ready(function () {
 
 // function that needs to be put in order for the song widget to show up
 function widget() {
-	var w = document[typeof document.getElementsByClassName === 'function' ? 'getElementsByClassName' : 'querySelectorAll']('deezer-widget-player');
-	for (var i = 0, l = w.length; i < l; i++) {
-		w[i].innerHTML = '';
-		var el = document.createElement('iframe');
-		el.src = w[i].getAttribute('data-src');
-		el.scrolling = w[i].getAttribute('data-scrolling');
-		el.frameBorder = w[i].getAttribute('data-frameborder');
-		el.setAttribute('frameBorder', w[i].getAttribute('data-frameborder'));
-		el.allowTransparency = w[i].getAttribute('data-allowTransparency');
-		el.width = w[i].getAttribute('data-width');
-		el.height = w[i].getAttribute('data-height');
-		w[i].appendChild(el);
-	}
+    var w = document[typeof document.getElementsByClassName === 'function' ? 'getElementsByClassName' : 'querySelectorAll']('deezer-widget-player');
+    for (var i = 0, l = w.length; i < l; i++) {
+        w[i].innerHTML = '';
+        var el = document.createElement('iframe');
+        el.src = w[i].getAttribute('data-src');
+        el.scrolling = w[i].getAttribute('data-scrolling');
+        el.frameBorder = w[i].getAttribute('data-frameborder');
+        el.setAttribute('frameBorder', w[i].getAttribute('data-frameborder'));
+        el.allowTransparency = w[i].getAttribute('data-allowTransparency');
+        el.width = w[i].getAttribute('data-width');
+        el.height = w[i].getAttribute('data-height');
+        w[i].appendChild(el);
+    }
 };
 
-function initialWidget(){
-    $(".deezer-widget-player").attr('data-src',"");
+//initial display of the widget as a play button
+function initialWidget() {
+    $(".deezer-widget-player").attr('data-src', "");
     $(".deezer-widget-player").html('<i class="fas fa-play-circle"></i>')
     $(".deezer-widget-player").addClass("wow fadeInDown")
-    $(".deezer-widget-player").attr("data-wow-duration","3s");
-    $(".deezer-widget-player").attr('data-wow-display',".2s");
+    $(".deezer-widget-player").attr("data-wow-duration", "3s");
+    $(".deezer-widget-player").attr('data-wow-display', ".2s");
     // widget();
 }
 
-// initial display of widget
+// calling initial display of widget
 initialWidget();
-// widget();
