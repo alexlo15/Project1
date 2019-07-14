@@ -109,12 +109,19 @@ $(document).ready(function () {
                     var songName = $(this).attr('data-name');
                     console.log(songName);
 
-                    var songURL = "https://api.deezer.com/search/track?q=" + songName;
+                    var songLookUpURL = "https://api.deezer.com/search/track?q=" + songName;
                     $.ajax({
-                        url: "https://cors-anywhere.herokuapp.com/" + songURL,
+                        url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
                         method: "GET"
                     }).then (function(response){
                         console.log(response.data[0].id);
+
+                        var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+
+                        $(".deezer-widget-player").attr("data-src",songURL);
+
+                        widget();
+
                     });
 
                 });
