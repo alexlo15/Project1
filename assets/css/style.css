@@ -1,85 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------Common Styling------------ */
+.clear {
+    clear: both;
+}
+
+.borderBottomClass {
+    border-bottom: 2px solid #000;
+}
+
+/* -----------------Navbar Styling------------------ */
+#spatifyHeader {
+    display: inline-block;
+}
+#cheaposHeaderLine {
+    margin-left: 5%;
+}
+/* -------------------------------------------------------- */
 #musicDiv {
-    float: left;
-    /* width: 50%; */
+    padding: 10px;
 }
-
 #lyricDiv {
-    float: right;
     width: 100%;
-    /* width: 48%; */
+}
+#rightDiv{
+    border:2px solid #000;
+    display: none;
 }
 
-iframe {
+#artistImage {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 0%;
+    margin-right: 20px;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    /* display: none; */
+}
+
+#artistImage:hover {
+    background: #000;
+    cursor: pointer;
+}
+
+/* ---------------Dynamic Generated Elements Stylings --------- */
+.artistHeadling {
+    padding-top: 5px;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.albumNameClass {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+#trackUrl,#eventCheckDate {
+    color: rgb(35, 20, 247);
+    cursor: pointer;
+}
+
+#iframeTrack {
     width: 100%;
     height: 800px;
     /* height: auto; */
     margin-top: 10px;
 }
-
-a {
-    color: blue;
-    cursor: pointer;
+#trackDiv p {
+    margin-bottom: 0;
+}
+#eventIFrame{
+    width: 100%;
+    height: 800px;
 }
 
-#artistImage{
-    width:100px;
-    height: 100px;
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 20px;
-    border:1px solid #000;
-    padding:5px;
-    /* text-align: center; */
-    border-radius: 5px;
-    display: none;
-}
-#artistImage:hover{
-    background: #000;
-    cursor: pointer;
-}
-.artistHeadling{
-    padding-top:5px;
-    text-transform: capitalize;
-    display: inline-block;
-}
+
+
+
+
 /* alexs after here */
 
-body{
+body {
     background-image: url("../images/background.jpg");
     background-size: cover;
 }
 
-.navbar-brand{
-display: inline;
+.navbar-brand {
+    display: inline;
 
 }
 
 
 
 /* little spot logo top left */
-#spot{
+#spot {
     width: 5%;
-    height: 5%;;
+    height: 5%;
+    min-width:50px;
+    min-height: 50px;
     transform: rotate(180deg);
 }
 
 /* background white, borders, spacing for the content sections */
-.sect{
+/* .sect {
     background: white;
     border: solid black 3px;
-    padding: 10px;
-    
-}
+    padding: 5px;
+
+} */
 
 /* spacing for the top two columns from the navbar */
-.vid, .lyrics{
+/* .vid,
+.lyrics {
     margin-top: 10px;
-}
+} */
 
-#nowplaying{
+#nowplaying {
     margin-top: 10px;
     background: white;
     border: solid black 3px;
     padding: 10px;
-    
+
 }
