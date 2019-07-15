@@ -13,7 +13,11 @@
     border-bottom: 2px solid #000;
 }
 
-
+body {
+    background-image: url("../images/background.jpg");
+    /* background-image: linear-gradient(to right, #379c59, #377a9c); */
+    background-size: cover;
+}
   
 /* -----------------Navbar Styling------------------ */
 /* little spot logo top left */
