@@ -159,6 +159,51 @@ nav{
 
 /* alexs after here */
 
+.themes{
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+.abstract{
+    background-image: url("../images/abstract.jpg");
+    background-size: cover;
+}
+
+.space {
+    background-image: url("../images/space.jpg");
+    background-size: cover;
+}
+
+.beach{
+    background-image: url("../images/beach.jpg");
+    background-size: cover;
+}
+
+.rain{
+    background-image: url("../images/rain.jpg");
+    background-size: cover;
+}
+
+.lounge{
+    background-image: url("../images/lounge.jpg");
+    background-size: cover;
+}
+
+.coffee{
+    background-image: url("../images/coffee.jpg");
+    background-size: cover;
+}
+
+
+#pics{
+    margin-top: 10px;
+    background: white;
+    border: solid black 3px;
+    padding: 10px;
+    display: inline-block;
+    
+  
+}
 
 
 /* background white, borders, spacing for the content sections */
