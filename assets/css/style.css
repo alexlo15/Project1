@@ -101,6 +101,8 @@ padding-bottom: 6%;
     display: none;
     margin-top: 1%;
     margin-left: 5%;
+    height: 450px;
+    overflow: auto;
     background: white;
     border: 4px double #63ad77;
     
@@ -170,6 +172,8 @@ padding-bottom: 6%;
     width: 100%;
     margin-top: 1%;
     margin-left: 7%;
+    height: 600px;
+    overflow: auto;
     background: white;
     border: 4px double #63ad77;
 }
@@ -182,38 +186,56 @@ padding-bottom: 6%;
 
 .themes{
     background-image: url("../images/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 .abstract{
     background-image: url("../images/abstract.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 .space {
     background-image: url("../images/space.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 .beach{
     background-image: url("../images/beach.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 .rain{
     background-image: url("../images/rain.jpg");
-    background-size: cover;
-}
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
 
 .lounge{
     background-image: url("../images/lounge.jpg");
-    background-size: cover;
-}
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
 
 .coffee{
     background-image: url("../images/coffee.jpg");
-    background-size: cover;
-}
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
 
 
 #pics{
