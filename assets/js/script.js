@@ -213,6 +213,7 @@ $(document).ready(function () {
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
         // $("#txtArtistName").val("");
+        $("#rightDiv").show();
 
 
 
