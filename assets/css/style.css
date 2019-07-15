@@ -120,6 +120,11 @@ padding-bottom: 6%;
     /* display: none; */
 }
 
+#artist-info{
+    color: white;
+    background: red;
+    }
+
 #artistImage:hover {
     background: #000;
     cursor: pointer;
@@ -180,6 +185,8 @@ padding-bottom: 6%;
 #lyricDiv {
     width: 100%;
 }
+
+
 
 
 /* alexs after here */

@@ -61,6 +61,9 @@ $(document).ready(function () {
 
         $("#musicDiv").addClass('borderBottomClass');
 
+        // this will get the artist-info
+        artistBio(artistName);
+
         // This Function  will load image in image tag
         displayImageFuncion(artistName);
 
@@ -196,7 +199,27 @@ $(document).ready(function () {
         }
         // To clear the input box on get track click
         // $("input:text").val('');
+        
+        function artistBio(){
+            
+            var napsterKey = "NDI4OTM2NWMtNjUwMS00MTE2LWE1OWItMThmOWJkZDY0Mzdm"
 
+            var napsterUrl = "http://api.napster.com/v2.2/search?apikey=" + napsterKey + 
+            "&query=" + artistName + "&type=artist";
+            
+            $.ajax({
+                url: napsterUrl,
+                method: "Get"
+            }).then(function(response){  
+                $("#artist-info").empty();       
+                var bio = response.search.data.artists[0].bios[0].bio;
+                $("#artist-info").append(`<p>${bio}</p>`);
+                
+
+                
+            })
+            
+        }
     })
 
     function resetFields() {
