@@ -11,6 +11,7 @@ $(document).ready(function () {
     $("#btnGetTracks").on('click', function (e) {
         initialWidget();
         var artistName = $("#txtArtistName").val().trim();
+        $("#txtArtistName").val("");
         e.preventDefault();
         $("#leftDiv").removeClass('col-sm-5');
         $("leftDiv").addClass('col-sm-7');
@@ -99,7 +100,7 @@ $(document).ready(function () {
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
                     .track_name);
 
-                trackUrl.text("Click Me For Lyrics")
+                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
                     $("#rightDiv").addClass('col-sm-5');
@@ -169,6 +170,7 @@ $(document).ready(function () {
         // alert('on check event');
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
+        $("#txtArtistName").val("");
 
 
 

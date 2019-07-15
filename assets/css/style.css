@@ -32,7 +32,17 @@ h1, h2{
     padding-right: 2%;
     font-size: 175px;
 }
-/* -------------------------------------------------------- */
+/* -----------------------USER INPUT--------------------------------- */
+/* buttons */
+#btnGetTracks, #checkEvent {
+    border: 1px solid lightgray;
+}
+
+/* click me to play styling */
+.smallPlay {
+    font-size: 14px;
+}
+
 #musicDiv {
     padding: 10px;
 }
@@ -74,7 +84,7 @@ h1, h2{
 }
 
 #trackUrl,#eventCheckDate {
-    color: rgb(35, 20, 247);
+    color: #59a574;
     cursor: pointer;
 }
 

@@ -37,17 +37,29 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-5">
-
+            <div class="col-sm-5">
                 <div id='nowplaying' class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
                     <div class="col-12 col-sm-12">
                         <div id="musicDiv">
                             <h2>Spotify for cheapos!</h2>
                             <h3>Enter Artist Name :</h3>
 
-                            <input type="text" id="txtArtistName">
-                            <button id="btnGetTracks">Get Tracks</button>
-                            <button id="checkEvent">Check Event</button>
+                            <!-- <input type="text" id="txtArtistName"> -->
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Artist Name"
+                                    aria-label="Recipient's username with two button addons"
+                                    aria-describedby="button-addon4" id="txtArtistName">
+                                <div class="input-group-append" id="button-addon4">
+                                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                                        Tracks</button>
+                                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                                        Event</button>
+                                </div>
+                            </div>
+                            <!-- <button type="button" class="btn btn-success btn-sm" id="btnGetTracks">Get Tracks</button>
+                            <button type="button" class="btn btn-success btn-sm" id="checkEvent">Check Event</button> -->
+                            <!-- <button id="btnGetTracks">Get Tracks</button>
+                            <button id="checkEvent">Check Event</button> -->
 
                         </div>
                         <div id="trackDiv" class="clear">
@@ -83,13 +95,13 @@
 
         </div>
         <br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="sect col-md-12">
                 TICKET MASTER OR EVENT API HERE
 
 
             </div>
-        </div>
+        </div> -->
 
     </div>
 
