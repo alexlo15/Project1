@@ -15,6 +15,7 @@
 
 body {
     background-image: url("../images/background.jpg");
+    /* background-image: linear-gradient(to right, #379c59, #377a9c); */
     background-size: cover;
 }
 
@@ -26,10 +27,12 @@ body {
     min-width: 200px;
     min-height: 200px;
     transform: rotate(180deg);
+    float: left;
 }
 
 #spatifyHeader {
-    display: inline-block;
+    margin-top: 5%;
+    /* display: inline-block; */
     font-size: 80px;
 }
 
@@ -39,6 +42,10 @@ body {
 
 h1, h2{
     font-family: 'Maven Pro', sans-serif;
+}
+
+h3{
+    /* color: #41be6d; */
 }
 
 .fas, .fa-play-circle{
@@ -51,21 +58,19 @@ h1, h2{
     display: inline;
 
 }
+nav{
+    background-image: linear-gradient(-180deg, #41be6d, #283643);
+}
 /* -----------------------USER INPUT--------------------------------- */
 /* buttons */
 #btnGetTracks, #checkEvent {
     border: 1px solid lightgray;
 }
-
-#musicDiv {
-    padding: 10px;
-}
-
 #nowplaying {
     margin-top: 10px;
-    background: white;
-    border: solid black 3px;
+    background: transparent;
     padding: 10px;
+    padding-bottom: 25px;
 
 }
 
@@ -117,6 +122,7 @@ h1, h2{
 
 #trackDiv p {
     margin-bottom: 0;
+    
 }
 
 #eventIFrame{

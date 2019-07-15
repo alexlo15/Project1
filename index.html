@@ -16,14 +16,18 @@
 
 <body>
     <!-- nav bar -->
-    <nav class="container-fluid" style="background-color: #41be6d;">
+    <nav class="container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
                     src="assets/images/spot.jpg">
-                <h1 id="spatifyHeader" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
-                    Jankify
-                </h1>
+                <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+                    <h1 id="spatifyHeader">
+                        Jankify
+                    </h1>
+                    <h2>Spotify for cheapos!</h2>
+
+                </div>
             </div>
             <div class="col-md-6 player">
                 <!-- song player widget -->
@@ -33,75 +37,59 @@
                     data-height="200"></div>
             </div>
         </div>
+
+        <div class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'>
+            <h3>Enter Artist Name:</h3>
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Artist Name"
+                    aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
+                    id="txtArtistName">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                        Tracks</button>
+                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                        Event</button>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- user input of artist -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-5">
-                <div id='nowplaying' class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
-                    <div class="col-sm-12">
-                        <div id="musicDiv">
-                            <h2>Spotify for cheapos!</h2>
-                            <h3>Enter Artist Name:</h3>
+            <!-- <div class="col-sm-12 row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'>
+                <h2>Spotify for cheapos!</h2>
+                <h3>Enter Artist Name:</h3>
 
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Artist Name"
-                                    aria-label="Recipient's username with two button addons"
-                                    aria-describedby="button-addon4" id="txtArtistName">
-                                <div class="input-group-append" id="button-addon4">
-                                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
-                                        Tracks</button>
-                                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
-                                        Event</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div id="trackDiv" class="clear">
-                            <!-- This div will hold the tracks and Image -->
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <!-- <div class="sect row">
-                    <div class="col-12 col-sm-12">
-                        <img class="mr-3" src="" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">List-based media object</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Artist Name"
+                        aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
+                        id="txtArtistName">
+                    <div class="input-group-append" id="button-addon4">
+                        <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                            Tracks</button>
+                        <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                            Event</button>
                     </div>
                 </div> -->
+            <div id="trackDiv" class="clear">
+                <!-- This div will hold the tracks and Image -->
             </div>
-
-            <!-- DIVIDER COLUMN -->
-            <div class="col-12 col-sm-1"></div>
-
-            <div class="sect lyrics" id="rightDiv">
-                <div id="lyricDiv">
-                    <!-- This div will hold the lyrics and events -->
-                </div>
-            </div>
-            <!-- <div class="sect" id="player"></div> -->
-
         </div>
-        <br>
-        <!-- <div class="row">
-            <div class="sect col-md-12">
-                TICKET MASTER OR EVENT API HERE
+    </div>
+    <br>
 
+    <!-- DIVIDER COLUMN -->
+    <div class="col-12 col-sm-1"></div>
 
-            </div>
-        </div> -->
-
+    <div class="sect lyrics" id="rightDiv">
+        <div id="lyricDiv">
+            <!-- This div will hold the lyrics and events -->
+        </div>
     </div>
 
-
-
+    </div>
 
 
 
