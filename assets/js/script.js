@@ -11,9 +11,11 @@ $(document).ready(function () {
     $("#btnGetTracks").on('click', function (e) {
         initialWidget();
         var artistName = $("#txtArtistName").val().trim();
+        // $("#txtArtistName").val("");
         e.preventDefault();
-        $("#leftDiv").removeClass('col-sm-5');
-        $("leftDiv").addClass('col-sm-7');
+        // $("#leftDiv").removeClass('col-sm-5');
+        // $("#leftDiv").addClass('col-sm-7');
+        $("#trackDiv").show();
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -44,8 +46,8 @@ $(document).ready(function () {
             }).then(function (response) {
                 var obj = JSON.parse(response);
                 console.log(obj);
+                
                 // loop to display all tracks of the artist
-
                 displayTrackFunction(obj);
                 $("#trackDiv").trigger("click");
 
@@ -71,8 +73,10 @@ $(document).ready(function () {
 
         function displayTrackFunction(obj) {
 
-            //used for song widget
+            // used for song widget
             var songArtistName = obj.message.body.track_list[0].track.artist_name;
+            
+            console.log(songArtistName);
 
             //used for displaying track
             for (var i = 0; i < obj.message.body.track_list.length; i++) {
@@ -82,10 +86,10 @@ $(document).ready(function () {
                 var trackName = $("<p>");
                 var trackUrl = $("<a>");
 
-                trackAlbumName.text(i + 1 + " . " + "Album : " + obj.message.body.track_list[i]
+                trackAlbumName.text(i + 1 + ". " + "Album: " + obj.message.body.track_list[i]
                     .track
                     .album_name);
-                trackName.text("Track : " + obj.message.body.track_list[i].track
+                trackName.text("Track: " + obj.message.body.track_list[i].track
                     .track_name);
 
 
@@ -99,10 +103,10 @@ $(document).ready(function () {
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
                     .track_name);
 
-                trackUrl.text("Click Me For Lyrics")
+                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
-                    $("#rightDiv").addClass('col-sm-5');
+                    // $("#rightDiv").addClass('col-sm-5');
                     $("#lyricDiv").empty();
                     var iframeTrack = $("<iframe>");
                     iframeTrack.attr('id', 'iframeTrack')
@@ -119,26 +123,33 @@ $(document).ready(function () {
                         url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
                         method: "GET"
                     }).then(function (response) {
-                        console.log(response.data[0].id);
-                        console.log(response.data[1].artist.name);
-                        console.log(songArtistName);
 
-                        for (var i = 0; i < response.data.length; i++) {
-                            console.log(response.data[i].artist.name == songArtistName)
-                            if (response.data[i].artist.name == songArtistName) {
+                        var i = 0;
+                        artistMatches = false;
+
+                        while(artistMatches == false){
+
+                            console.log("went into the while loop")
+                                if (response.data[i].artist.name == songArtistName) {
                                 var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
 
                                 $(".deezer-widget-player").attr("data-src", songURL);
 
                                 widget();
+                                artistMatches = true;
+                            }
+                            i++;
 
+                            if(i === response.data.length){
+                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+
+        
+                                $(".deezer-widget-player").attr("data-src", songURL);
+        
+                                widget();
+                                artistMatches = true;
                             }
 
-                            var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
-
-                            $(".deezer-widget-player").attr("data-src", songURL);
-
-                            widget();
                         }
 
                     });
@@ -169,6 +180,7 @@ $(document).ready(function () {
         // alert('on check event');
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
+        // $("#txtArtistName").val("");
 
 
 
@@ -191,7 +203,7 @@ $(document).ready(function () {
 
             eventDiv.prepend(artistImage);
 
-            var upcomingEvents = $("<h2>").text("Upcoming events : " + response.upcoming_event_count);
+            var upcomingEvents = $("<h2>").text("Upcoming events: " + response.upcoming_event_count);
             var goToArtist = $("<a>").text("See Tour Dates");
             goToArtist.attr('id', 'eventCheckDate');
             goToArtist.click(function () {
