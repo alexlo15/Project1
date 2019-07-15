@@ -11,10 +11,11 @@ $(document).ready(function () {
     $("#btnGetTracks").on('click', function (e) {
         initialWidget();
         var artistName = $("#txtArtistName").val().trim();
-        $("#txtArtistName").val("");
+        // $("#txtArtistName").val("");
         e.preventDefault();
-        $("#leftDiv").removeClass('col-sm-5');
-        $("leftDiv").addClass('col-sm-7');
+        // $("#leftDiv").removeClass('col-sm-5');
+        // $("#leftDiv").addClass('col-sm-7');
+        $("#trackDiv").show();
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -103,7 +104,7 @@ $(document).ready(function () {
                 trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
-                    $("#rightDiv").addClass('col-sm-5');
+                    // $("#rightDiv").addClass('col-sm-5');
                     $("#lyricDiv").empty();
                     var iframeTrack = $("<iframe>");
                     iframeTrack.attr('id', 'iframeTrack')
@@ -173,7 +174,7 @@ $(document).ready(function () {
         // alert('on check event');
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
-        $("#txtArtistName").val("");
+        // $("#txtArtistName").val("");
 
 
 

@@ -15,8 +15,11 @@
 </head>
 
 <body>
+    <!-- background -->
+
+
     <!-- nav bar -->
-    <nav class="container-fluid">
+    <nav class="container-fluid sticky-top">
         <div class="row">
             <div class="col-md-6">
                 <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
@@ -56,43 +59,21 @@
     </nav>
 
     <!-- user input of artist -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <!-- <div class="col-sm-12 row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'>
-                <h2>Spotify for cheapos!</h2>
-                <h3>Enter Artist Name:</h3>
-
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Artist Name"
-                        aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
-                        id="txtArtistName">
-                    <div class="input-group-append" id="button-addon4">
-                        <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
-                            Tracks</button>
-                        <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
-                            Event</button>
-                    </div>
-                </div> -->
-            <div id="trackDiv" class="clear">
+            <div class="clear col-sm-5" id="trackDiv">
                 <!-- This div will hold the tracks and Image -->
             </div>
+
+            <div class="col-sm-5" id="rightDiv">
+                <div id="lyricDiv">
+                    <!-- This div will hold the lyrics and events -->
+                </div>
+            </div>
+
         </div>
     </div>
     <br>
-
-    <!-- DIVIDER COLUMN -->
-    <div class="col-12 col-sm-1"></div>
-
-    <div class="sect lyrics" id="rightDiv">
-        <div id="lyricDiv">
-            <!-- This div will hold the lyrics and events -->
-        </div>
-    </div>
-
-    </div>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
