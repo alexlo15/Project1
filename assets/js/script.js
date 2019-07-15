@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     var trackArtist = $("<h1>");
 
-
+    // get Artist songs played
     $("#btnGetTracks").on('click', function (e) {
         initialWidget();
         var artistName = $("#txtArtistName").val().trim();
@@ -52,9 +52,6 @@ $(document).ready(function () {
         $("#trackDiv").show();
         resetFields();
         // This will print artist name from textbox and append to musicDiv
-        var trackArtist = $("<h1>");
-        var artistName = $("#txtArtistName").val().trim();
-        // shows the track artist 
         // trackArtist = $("<h1>");
         trackArtist.addClass('artistHeadling');
 
@@ -64,72 +61,6 @@ $(document).ready(function () {
         $("#trackDiv").append(trackArtist);
         // $("#artistImage").show();
 
-        // ------------------------------
-        // This code will load info in artist info section
-        var queryUrl = 'https://api.napster.com/v2.2/artists/art.539' + artistInfo + 'nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4'
-        $ajax({
-            url: 'http://api.napster.com/v2.2/artists/nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4' + queryUrl,
-            method: 'GET',
-        }).then(function (response) {
-            var artistInfo = art.539;
-        console.log(response);
-
-        function displayArtistInfo() { 
-        var title = $("<h2>");
-        var author = $("<h2>");
-        var publishDate = $("<p>");
-        var bio = $("<para>");
-
-        var ArtistBackground = $("<h2>").text(response.artist_info + " artist info");
-    }
-    }));
-
-
-
-
-// --------------------------
-// This code will get track from musixmatch api 
-var queryUrl =
-    'http://api.musixmatch.com/ws/1.1/track.search?q_artist=' + artistName +
-    '&page_size=10&page=1&s_track_rating=desc&apikey=71f00284b464247092304a810bf79866'
-$.ajax({
-    url: "https://cors-anywhere.herokuapp.com/" + queryUrl,
-    method: 'GET',
-}).then(function (response) {
-    var obj = JSON.parse(response);
-    console.log(obj);
-    // loop to display all tracks of the artist
-    for (var i = 0; i < obj.message.body.track_list.length; i++) {
-        var iframeTrack = $("<iframe>");
-
-        var trackAlbumName = $("<h2>");
-        var trackName = $("<p>");
-    // displays the track of the album's name
-        trackAlbumName.text("Track Album Name: " + obj.message.body.track_list[i]
-            .track
-            .album_name);
-    // displays the song name
-        trackName.text("Track Name: " + obj.message.body.track_list[i].track
-            .track_name);
-
-        $("#musicDiv").append(trackAlbumName, trackName);
-        // trackArtist
-        // This will add anchor tag and trigger click of that tag and display lyric in lyricDiv
-        var trackUrl = $("<a>", {
-            'id': 'trackUrl',
-            'data-trackUrl': obj.message.body.track_list[i].track
-                .track_share_url
-        }).text("Click Me to play").click(function () {
-            var trackDisplayUrl = $(this).attr('data-trackUrl');
-            iframeTrack.attr('src', trackDisplayUrl);
-            $("#lyricDiv").append(iframeTrack);
-        });
-
-
-        $("#musicDiv").append(trackUrl);
-
-
-    }
         $("#musicDiv").addClass('borderBottomClass');
 
         // This Function  will load image in image tag
@@ -173,12 +104,12 @@ $.ajax({
                 $("#trackDiv").prepend(artistImage);
             })
         }
-
+        // displays track functions
         function displayTrackFunction(obj) {
 
             // used for song widget
             var songArtistName = obj.message.body.track_list[0].track.artist_name;
-            
+            // shows Artist's name
             console.log(songArtistName);
 
             //used for displaying track
@@ -188,7 +119,7 @@ $.ajax({
                 trackAlbumName.addClass('albumNameClass')
                 var trackName = $("<p>");
                 var trackUrl = $("<a>");
-
+                // shows information of song playing
                 trackAlbumName.text(i + 1 + ". " + "Album: " + obj.message.body.track_list[i]
                     .track
                     .album_name);
@@ -198,7 +129,7 @@ $.ajax({
 
                 $("#trackDiv").append(trackAlbumName, trackName);
 
-                // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
+                // This will add anchor tag and trigger click of that tag and display lyric in lyricDiv
 
                 trackUrl.attr('id', 'trackUrl');
                 trackUrl.attr('data-trackUrl', obj.message.body.track_list[i].track
@@ -270,39 +201,6 @@ $.ajax({
 
     })
 
-    $("#musicDiv").trigger("click");
-
-});
-    })
-
-$("#checkEvent").on('click', function (e) {
-    e.preventDefault();
-    alert('on check event');
-
-    var artistName = $("#txtArtistName").val().trim();
-
-
-    $("#artistImage").show();
-
-    var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
-        "?app_id=70db470b-35d4-4cf4-8624-428f3b573263";
-    $.ajax({
-        url: eventQueryURL,
-        method: 'GET'
-    }).then(function (response) {
-        console.log(response);
-        var artistImage = response.thumb_url;
-        $("#artistImage").attr('src', artistImage);
-
-        var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-        var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
-        $("#lyricDiv").prepend(upcomingEvents, goToArtist);
-    })
-});
-
-
-
-}
     function resetFields() {
 
         $("#trackDiv").empty();
@@ -366,7 +264,7 @@ $("#checkEvent").on('click', function (e) {
 
 
 
-
+})
 
 
 // function that needs to be put in order for the song widget to show up
