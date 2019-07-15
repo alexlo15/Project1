@@ -13,7 +13,21 @@
     border-bottom: 2px solid #000;
 }
 
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
 /* -----------------Navbar Styling------------------ */
+/* little spot logo top left */
+#spot {
+    width: 5%;
+    height: 5%;
+    min-width: 200px;
+    min-height: 200px;
+    transform: rotate(180deg);
+}
+
 #spatifyHeader {
     display: inline-block;
     font-size: 80px;
@@ -32,26 +46,33 @@ h1, h2{
     padding-right: 2%;
     font-size: 175px;
 }
+
+.navbar-brand {
+    display: inline;
+
+}
 /* -----------------------USER INPUT--------------------------------- */
 /* buttons */
 #btnGetTracks, #checkEvent {
     border: 1px solid lightgray;
 }
 
-/* click me to play styling */
-.smallPlay {
-    font-size: 14px;
-}
-
 #musicDiv {
     padding: 10px;
 }
+
+#nowplaying {
+    margin-top: 10px;
+    background: white;
+    border: solid black 3px;
+    padding: 10px;
+
+}
+
+/* ---------------Dynamic Generated Elements Stylings --------==- */
+/*-------------------------TRACK LISTINGS------------------------*/
 #lyricDiv {
     width: 100%;
-}
-#rightDiv{
-    border:2px solid #000;
-    display: none;
 }
 
 #artistImage {
@@ -71,7 +92,6 @@ h1, h2{
     cursor: pointer;
 }
 
-/* ---------------Dynamic Generated Elements Stylings --------- */
 .artistHeadling {
     padding-top: 5px;
     text-transform: capitalize;
@@ -94,40 +114,40 @@ h1, h2{
     /* height: auto; */
     margin-top: 10px;
 }
+
 #trackDiv p {
     margin-bottom: 0;
 }
+
 #eventIFrame{
     width: 100%;
     height: 800px;
 }
 
+/* click me to play styling */
+.btn-outline-success{
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.smallPlay {
+    font-size: 14px;
+    padding-top: 0;
+    padding-right: 0;
+}
+
+#rightDiv{
+    border:2px solid #000;
+    display: none;
+    width: 100%;
+}
 
 
 
 
 /* alexs after here */
 
-body {
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-}
 
-.navbar-brand {
-    display: inline;
-
-}
-
-
-
-/* little spot logo top left */
-#spot {
-    width: 5%;
-    height: 5%;
-    min-width: 200px;
-    min-height: 200px;
-    transform: rotate(180deg);
-}
 
 /* background white, borders, spacing for the content sections */
 /* .sect {
@@ -142,11 +162,3 @@ body {
 .lyrics {
     margin-top: 10px;
 } */
-
-#nowplaying {
-    margin-top: 10px;
-    background: white;
-    border: solid black 3px;
-    padding: 10px;
-
-}

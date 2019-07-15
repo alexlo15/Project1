@@ -45,8 +45,8 @@ $(document).ready(function () {
             }).then(function (response) {
                 var obj = JSON.parse(response);
                 console.log(obj);
+                
                 // loop to display all tracks of the artist
-
                 displayTrackFunction(obj);
                 $("#trackDiv").trigger("click");
 
@@ -83,10 +83,10 @@ $(document).ready(function () {
                 var trackName = $("<p>");
                 var trackUrl = $("<a>");
 
-                trackAlbumName.text(i + 1 + " . " + "Album : " + obj.message.body.track_list[i]
+                trackAlbumName.text(i + 1 + ". " + "Album: " + obj.message.body.track_list[i]
                     .track
                     .album_name);
-                trackName.text("Track : " + obj.message.body.track_list[i].track
+                trackName.text("Track: " + obj.message.body.track_list[i].track
                     .track_name);
 
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
                     .track_name);
 
-                trackUrl.html('<button type="button" class="btn btn-outline-success btn-sm"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
+                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
                     $("#rightDiv").addClass('col-sm-5');
@@ -196,7 +196,7 @@ $(document).ready(function () {
 
             eventDiv.prepend(artistImage);
 
-            var upcomingEvents = $("<h2>").text("Upcoming events : " + response.upcoming_event_count);
+            var upcomingEvents = $("<h2>").text("Upcoming events: " + response.upcoming_event_count);
             var goToArtist = $("<a>").text("See Tour Dates");
             goToArtist.attr('id', 'eventCheckDate');
             goToArtist.click(function () {
