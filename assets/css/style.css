@@ -28,6 +28,7 @@ body {
     min-height: 100px;
     transform: rotate(180deg);
     float: left;
+    /* margin-bottom: 2%; */
 }
 
 #spatifyHeader {
@@ -79,8 +80,8 @@ height: 7%;
 }
 
 .input-group{
-padding-top: 9%;
-padding-bottom: 6%;
+padding-top: 3%;
+/* padding-bottom: 6%; */
 }
 /* -----------------------USER INPUT--------------------------------- */
 /* buttons */
