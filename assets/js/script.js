@@ -11,7 +11,7 @@ $(document).ready(function () {
     $("#btnGetTracks").on('click', function (e) {
         initialWidget();
         var artistName = $("#txtArtistName").val().trim();
-        $("#txtArtistName").val("");
+        // $("#txtArtistName").val("");
         e.preventDefault();
         $("#leftDiv").removeClass('col-sm-5');
         $("leftDiv").addClass('col-sm-7');
@@ -173,7 +173,9 @@ $(document).ready(function () {
         // alert('on check event');
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
-        $("#txtArtistName").val("");
+        // $("#txtArtistName").val("");
+        $("#rightDiv").show();
+        $("#rightDiv").addClass('col-sm-5');
 
 
 
