@@ -1,12 +1,13 @@
 $(document).ready(function () {
 
-
+    // click the button to get the track
     $("#btnGetTracks").on('click', function (e) {
 
         e.preventDefault();
         // This will print artist name from textbox and append to musicDiv
         var trackArtist = $("<h1>");
         var artistName = $("#txtArtistName").val().trim();
+        // shows the track artist 
         trackArtist.text(artistName);
         $("#musicDiv").append(trackArtist);
         $("#artistImage").show();
@@ -25,18 +26,23 @@ $(document).ready(function () {
         })
 
         // ------------------------------
-        // This code will load info in artist info tag
+        // This code will load info in artist info section
         var queryUrl = 'https://api.napster.com/v2.2/artists/art.539' + artistInfo + 'nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4'
         $ajax({
-            url: "http://api.napster.com/v2.2/artists/nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4" + queryUrl,
+            url: 'http://api.napster.com/v2.2/artists/nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4' + queryUrl,
             method: 'GET',
-        }).then(function (response {
+        }).then(function (response) {
             var artistInfo = art.539;
         console.log(response);
+
+        function displayArtistInfo() { 
         var title = $("<h2>");
         var author = $("<h2>");
         var publishDate = $("<p>");
         var bio = $("<para>");
+
+        var ArtistBackground = $("<h2>").text(response.artist_info + " artist info");
+    }
     }));
 
 
@@ -59,16 +65,17 @@ $.ajax({
 
         var trackAlbumName = $("<h2>");
         var trackName = $("<p>");
-
-        trackAlbumName.text("Track Album Name : " + obj.message.body.track_list[i]
+    // displays the track of the album's name
+        trackAlbumName.text("Track Album Name: " + obj.message.body.track_list[i]
             .track
             .album_name);
-        trackName.text("Track Name : " + obj.message.body.track_list[i].track
+    // displays the song name
+        trackName.text("Track Name: " + obj.message.body.track_list[i].track
             .track_name);
 
         $("#musicDiv").append(trackAlbumName, trackName);
         // trackArtist
-        // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
+        // This will add anchor tag and trigger click of that tag and display lyric in lyricDiv
         var trackUrl = $("<a>", {
             'id': 'trackUrl',
             'data-trackUrl': obj.message.body.track_list[i].track
@@ -118,4 +125,4 @@ $("#checkEvent").on('click', function (e) {
 
 
 
-})
+}
