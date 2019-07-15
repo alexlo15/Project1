@@ -47,7 +47,7 @@ $(document).ready(function () {
         e.preventDefault();
         // $("#leftDiv").removeClass('col-sm-5');
         // $("#leftDiv").addClass('col-sm-7');
-        $("#trackDiv").show();
+        $("#leftDiv").show();
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -98,11 +98,13 @@ $(document).ready(function () {
                 method: 'GET'
             }).then(function (response) {
                 console.log(response);
+                $("#artistPic").empty();
                 var artistImage = $("<img>");
                 var artistImageUrl = response.thumb_url;
                 artistImage.attr('id', 'artistImage');
                 artistImage.attr('src', artistImageUrl);
-                $("#trackDiv").prepend(artistImage);
+                artistImage.addClass("card-img")
+                $("#artistPic").prepend(artistImage);
             })
         }
 
@@ -214,6 +216,7 @@ $(document).ready(function () {
                 $("#artist-info").empty();       
                 var bio = response.search.data.artists[0].bios[0].bio;
                 $("#artist-info").append(`<p>${bio}</p>`);
+                $("#artist-info").prepend("<h3>Artist Bio</h3>")
                 
 
                 
@@ -223,7 +226,7 @@ $(document).ready(function () {
     })
 
     function resetFields() {
-
+        $("#artistImage").empty();
         $("#trackDiv").empty();
     }
 

@@ -30,6 +30,7 @@
                     <h2>Spotify for cheapos!</h2>
 
                 </div>
+                <!-- user input of artist -->
                 <div class="col-md-6">
                     <div class="input-group">
                         <!-- <h3>Enter Artist Name:</h3> -->
@@ -48,10 +49,11 @@
             <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
 
             <!-- </div> -->
-           
+
         </div>
 
     </nav>
+
     <!-- buttons for changing background -->
     <div id="pics" class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
         <div class="col-md-12">
@@ -65,30 +67,62 @@
 
     </div>
 
-
-    <!-- user input of artist -->
     <div class="container-fluid">
         <div class="row">
-            <div class="clear col-sm-5" id="trackDiv">
-                <!-- This div will hold the tracks and Image -->
+
+            <div class="col-md-5" id="leftDiv">
+                <!-- card that displays the image and the artist info -->
+                <div class="card mb-3" style="max-width: 540px;" id="artistCard">
+                    <div class="row no-gutters">
+                        <div class="col-md-4" id="artistPic">
+                            <!-- <img src="..." class="card-img" alt="..."> -->
+                        </div>
+                        <div class="col-md-8" id="artist-info">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- div that displays the lyrics -->
+                <div id="trackDiv">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="..." class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This div will hold the tracks and Image -->
+                </div>
             </div>
 
+
             <div class="col-sm-5" id="rightDiv">
-        <!-- song player widget -->
-        <div class="deezer-widget-player"
-            data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
-            data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200">
-        </div>
+                <!-- song player widget -->
+                <div class="deezer-widget-player"
+                    data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+                    data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
+                    data-height="200">
+                </div>
                 <div id="lyricDiv">
                     <!-- This div will hold the lyrics and events -->
                 </div>
             </div>
 
         </div>
-            <div id="artist-info">
-                    Title artist info
+        <!-- <div id="artist-info">
+            Title artist info
 
-            </div>
+        </div> -->
     </div>
     <br>
 
