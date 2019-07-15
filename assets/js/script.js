@@ -73,8 +73,10 @@ $(document).ready(function () {
 
         function displayTrackFunction(obj) {
 
-            //used for song widget
+            // used for song widget
             var songArtistName = obj.message.body.track_list[0].track.artist_name;
+            
+            console.log(songArtistName);
 
             //used for displaying track
             for (var i = 0; i < obj.message.body.track_list.length; i++) {
@@ -121,29 +123,33 @@ $(document).ready(function () {
                         url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
                         method: "GET"
                     }).then(function (response) {
-                        console.log(response.data[0].id);
-                        console.log(response.data[1].artist.name);
-                        console.log(songArtistName);
 
                         var i = 0;
                         artistMatches = false;
-                        while(!artistMatches || i == response.data.length){
-                            if (response.data[i].artist.name == songArtistName) {
+
+                        while(artistMatches == false){
+
+                            console.log("went into the while loop")
+                                if (response.data[i].artist.name == songArtistName) {
                                 var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
 
                                 $(".deezer-widget-player").attr("data-src", songURL);
 
                                 widget();
                                 artistMatches = true;
-
-                            } else{
-                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
-
-                                $(".deezer-widget-player").attr("data-src", songURL);
-    
-                                widget();
                             }
                             i++;
+
+                            if(i === response.data.length){
+                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+
+        
+                                $(".deezer-widget-player").attr("data-src", songURL);
+        
+                                widget();
+                                artistMatches = true;
+                            }
+
                         }
 
                     });
