@@ -19,49 +19,39 @@
 
 
     <!-- nav bar -->
-    <nav class="container-fluid sticky-top">
-        <div class="row">
-            <div class="col-md-6">
-                <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
-                    src="assets/images/spot.jpg">
-                <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+    <nav class="container-fluid">
+        <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s" src="assets/images/spot.jpg">
+        <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+            <div class="row">
+                <div class="col-md-6">
                     <h1 id="spatifyHeader">
                         Jankify
                     </h1>
                     <h2>Spotify for cheapos!</h2>
 
                 </div>
-            </div>
-            <div class="col-md-6 player">
-                <!-- song player widget -->
-                <div class="deezer-widget-player"
-                    data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
-                    data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
-                    data-height="200" data-wow-duration="3s" data-wow-display=".2s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInDown"> 
-                    <i class="fas fa-play-circle">
-                        <!--::before-->
-                    </i>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <!-- <h3>Enter Artist Name:</h3> -->
+                        <input type="text" class="form-control" placeholder="Enter Artist Name"
+                            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
+                            id="txtArtistName">
+                        <div class="input-group-append" id="button-addon4">
+                            <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                                Tracks</button>
+                            <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                                Event</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
+
+            <!-- </div> -->
         </div>
 
-        <div class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'>
-            <h3>Enter Artist Name:</h3>
-
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Artist Name"
-                    aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
-                    id="txtArtistName">
-                <div class="input-group-append" id="button-addon4">
-                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
-                        Tracks</button>
-                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
-                        Event</button>
-                </div>
-            </div>
-        </div>
     </nav>
-<!-- buttons for changing background -->
+    <!-- buttons for changing background -->
     <div id="pics" class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
         <div class="col-md-12">
             <button type="button" id="but1" class="btn btn-outline-primary"> Space </button>
@@ -83,6 +73,11 @@
             </div>
 
             <div class="col-sm-5" id="rightDiv">
+        <!-- song player widget -->
+        <div class="deezer-widget-player"
+            data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+            data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200">
+        </div>
                 <div id="lyricDiv">
                     <!-- This div will hold the lyrics and events -->
                 </div>

@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     // get Artist songs played
     $("#btnGetTracks").on('click', function (e) {
-        initialWidget();
+        // initialWidget();
         var artistName = $("#txtArtistName").val().trim();
         // $("#txtArtistName").val("");
         e.preventDefault();
@@ -215,6 +215,7 @@ $(document).ready(function () {
         $("#lyricDiv").empty();
         var artistName = $("#txtArtistName").val().trim();
         // $("#txtArtistName").val("");
+        $("#rightDiv").show();
 
 
 
@@ -285,14 +286,14 @@ function widget() {
 };
 
 //initial display of the widget as a play button
-function initialWidget() {
-    $(".deezer-widget-player").attr('data-src', "");
-    $(".deezer-widget-player").html('<i class="fas fa-play-circle"></i>')
-    $(".deezer-widget-player").addClass("wow fadeInDown")
-    $(".deezer-widget-player").attr("data-wow-duration", "3s");
-    $(".deezer-widget-player").attr('data-wow-display', ".2s");
-    // widget();
-}
+// function initialWidget() {
+//     $(".deezer-widget-player").attr('data-src', "");
+//     $(".deezer-widget-player").html('<i class="fas fa-play-circle"></i>')
+//     $(".deezer-widget-player").addClass("wow fadeInDown")
+//     $(".deezer-widget-player").attr("data-wow-duration", "3s");
+//     $(".deezer-widget-player").attr('data-wow-display', ".2s");
+//     // widget();
+// }
 
-// calling initial display of widget
-initialWidget();
+// // calling initial display of widget
+// initialWidget();
