@@ -37,7 +37,7 @@ $(document).ready(function () {
         var author = $("<h2>");
         var publishDate = $("<p>");
         var bio = $("<para>");
-    }))
+    }));
 
 
 
