@@ -1,10 +1,8 @@
 $(document).ready(function () {
 // button functions to add/remove classes with image settings
 
-<<<<<<< HEAD
     // click the button to get the track
     $("#btnGetTracks").on('click', function (e) {
-=======
     $("#but1").on("click", function() { 
         $("body").removeClass()
         $("body").addClass("space");
@@ -42,7 +40,6 @@ $(document).ready(function () {
     });
 
     var trackArtist = $("<h1>");
->>>>>>> master
 
 
     $("#btnGetTracks").on('click', function (e) {
@@ -55,22 +52,18 @@ $(document).ready(function () {
         $("#trackDiv").show();
         resetFields();
         // This will print artist name from textbox and append to musicDiv
-<<<<<<< HEAD
         var trackArtist = $("<h1>");
         var artistName = $("#txtArtistName").val().trim();
         // shows the track artist 
-=======
         // trackArtist = $("<h1>");
         trackArtist.addClass('artistHeadling');
 
->>>>>>> master
         trackArtist.text(artistName);
         // $("#txtArtistName").text('');
 
         $("#trackDiv").append(trackArtist);
         // $("#artistImage").show();
 
-<<<<<<< HEAD
         // ------------------------------
         // This code will load info in artist info section
         var queryUrl = 'https://api.napster.com/v2.2/artists/art.539' + artistInfo + 'nas?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4'
@@ -137,7 +130,6 @@ $.ajax({
 
 
     }
-=======
         $("#musicDiv").addClass('borderBottomClass');
 
         // This Function  will load image in image tag
@@ -275,11 +267,9 @@ $.ajax({
         }
         // To clear the input box on get track click
         // $("input:text").val('');
->>>>>>> master
 
     })
 
-<<<<<<< HEAD
     $("#musicDiv").trigger("click");
 
 });
@@ -313,7 +303,6 @@ $("#checkEvent").on('click', function (e) {
 
 
 }
-=======
     function resetFields() {
 
         $("#trackDiv").empty();
@@ -377,7 +366,7 @@ $("#checkEvent").on('click', function (e) {
 
 
 
-})
+
 
 
 // function that needs to be put in order for the song widget to show up
@@ -409,4 +398,3 @@ function initialWidget() {
 
 // calling initial display of widget
 initialWidget();
->>>>>>> master
