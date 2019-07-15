@@ -100,7 +100,7 @@ $(document).ready(function () {
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
                     .track_name);
 
-                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
+                trackUrl.html('<button type="button" class="btn btn-outline-success btn-sm"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
                     $("#rightDiv").addClass('col-sm-5');
@@ -124,14 +124,16 @@ $(document).ready(function () {
                         console.log(response.data[1].artist.name);
                         console.log(songArtistName);
 
-                        for (var i = 0; i < response.data.length; i++) {
-                            console.log(response.data[i].artist.name == songArtistName)
+                        var i = 0;
+                        artistMatches = false;
+                        while(!artistMatches || i == response.data.length){
                             if (response.data[i].artist.name == songArtistName) {
                                 var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
 
                                 $(".deezer-widget-player").attr("data-src", songURL);
 
                                 widget();
+                                artistMatches = true;
 
                             } else{
                                 var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
@@ -140,7 +142,7 @@ $(document).ready(function () {
     
                                 widget();
                             }
-
+                            i++;
                         }
 
                     });
