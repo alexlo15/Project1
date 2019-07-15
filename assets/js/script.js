@@ -1,4 +1,36 @@
 $(document).ready(function () {
+// button functions to add/remove classes with image settings
+
+    $("#but1").on("click", function() { 
+        $("body").removeClass()
+        $("body").addClass("space");
+      });
+
+      $("#but2").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("abstract");
+      });
+
+      $("#but3").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("beach");
+      });
+
+      $("#but4").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("rain");
+      });
+
+      $("#but5").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("lounge");
+      });
+
+      $("#but6").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("coffee");
+      });
+
 
     $(function () {
         //animate on scroll
