@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/images/icon_spot.png" type="image/gif" sizes="20x20">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animation/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Jankify</title>
+    <title>Jankify | Spotify for Cheapos!</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-light" style="background-color: #52ce00;">
+<body class="themes">
+    <!-- background -->
 
+<<<<<<< HEAD
         <a class="navbar-brand"><img id="spot" src="assets/images/spot.jpg">
             <h1>Spatify</h1>
             <h2>Spotify for cheapos!</h2>
@@ -23,8 +27,13 @@
 
 
     <div class="container">
+=======
+>>>>>>> master
 
+    <!-- nav bar -->
+    <nav class="container-fluid sticky-top">
         <div class="row">
+<<<<<<< HEAD
 
             <div class="col-lg-5">
 
@@ -82,25 +91,81 @@
                 <div class="sect" id="player"></div>
 
 
-            </div>
+=======
+            <div class="col-md-6">
+                <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
+                    src="assets/images/spot.jpg">
+                <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+                    <h1 id="spatifyHeader">
+                        Jankify
+                    </h1>
+                    <h2>Spotify for cheapos!</h2>
 
+                </div>
+            </div>
+            <div class="col-md-6 player">
+                <!-- song player widget -->
+                <div class="deezer-widget-player"
+                    data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+                    data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
+                    data-height="200"></div>
+>>>>>>> master
+            </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="sect col-md-12">
-                TICKET MASTER OR EVENT API HERE
 
+        <div class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'>
+            <h3>Enter Artist Name:</h3>
 
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Artist Name"
+                    aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
+                    id="txtArtistName">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                        Tracks</button>
+                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                        Event</button>
+                </div>
             </div>
+        </div>
+    </nav>
+<!-- buttons for changing background -->
+    <div id="pics" class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
+        <div class="col-md-12">
+            <button type="button" id="but1" class="btn btn-outline-primary"> Space </button>
+            <button type="button" id="but2" class="btn btn-outline-secondary">Abstract</button>
+            <button type="button" id="but3" class="btn btn-outline-success">Beachy</button>
+            <button type="button" id="but4" class="btn btn-outline-danger">Rainy Day</button>
+            <button type="button" id="but5" class="btn btn-outline-warning">Lounge</button>
+            <button type="button" id="but6" class="btn btn-outline-info">Coffee Shop</button>
         </div>
 
     </div>
 
 
+    <!-- user input of artist -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="clear col-sm-5" id="trackDiv">
+                <!-- This div will hold the tracks and Image -->
+            </div>
 
+            <div class="col-sm-5" id="rightDiv">
+                <div id="lyricDiv">
+                    <!-- This div will hold the lyrics and events -->
+                </div>
+            </div>
 
+<<<<<<< HEAD
+=======
+        </div>
+    </div>
+    <br>
+
+>>>>>>> master
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/WOW/wow.min.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>

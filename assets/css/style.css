@@ -1,68 +1,217 @@
-#musicDiv {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------Common Styling------------ */
+.clear {
+    clear: both;
+}
+
+.borderBottomClass {
+    border-bottom: 2px solid #000;
+}
+
+
+  
+/* -----------------Navbar Styling------------------ */
+/* little spot logo top left */
+#spot {
+    width: 5%;
+    height: 5%;
+    min-width: 200px;
+    min-height: 200px;
+    transform: rotate(180deg);
     float: left;
-    /* width: 50%; */
 }
 
-#lyricDiv {
-    float: right;
-    /* width: 48%; */
+#spatifyHeader {
+    margin-top: 5%;
+    /* display: inline-block; */
+    font-size: 80px;
 }
 
-iframe {
-    width: auto;
-    height: auto;
+.player{
+    margin-top: 1%;
+    text-align: right;
+}
+
+h1, h2{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+
+.fas, .fa-play-circle{
+    padding-top: 1%;
+    padding-right: 2%;
+    font-size: 175px;
+}
+
+.navbar-brand {
+    display: inline;
+
+}
+
+nav{
+    background-image: linear-gradient(-180deg, #41be6d, #283643);
+    z-index: 2;
+}
+/* -----------------------USER INPUT--------------------------------- */
+/* buttons */
+#btnGetTracks, #checkEvent {
+    border: 1px solid lightgray;
+}
+#nowplaying {
     margin-top: 10px;
+    background: transparent;
+    padding: 10px;
+    padding-bottom: 25px;
+
 }
 
-a {
-    color: blue;
+/* ---------------Dynamic Generated Elements Stylings --------==- */
+/*-------------------------TRACK LISTINGS------------------------*/
+#trackDiv{
+    display: none;
+    margin-top: 1%;
+    margin-left: 5%;
+    background: white;
+    border: 4px double #63ad77;
+    
+}
+
+#artistImage {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 0%;
+    margin-right: 20px;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    /* display: none; */
+}
+
+#artistImage:hover {
+    background: #000;
     cursor: pointer;
 }
 
-#artistImage{
-    width:100px;
-    height: 100px;
-    border:1px solid #000;
+.artistHeadling {
+    padding-top: 5px;
+    text-transform: capitalize;
+    display: inline-block;
 }
+
+.albumNameClass {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+#trackUrl,#eventCheckDate {
+    color: #59a574;
+    cursor: pointer;
+}
+
+#iframeTrack {
+    width: 100%;
+    height: 800px;
+    /* height: auto; */
+    margin-top: 10px;
+}
+
+#eventIFrame{
+    width: 100%;
+    height: 800px;
+}
+
+/* click me to play styling */
+.btn-outline-success{
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+.smallPlay {
+    font-size: 14px;
+    padding-top: 0;
+    padding-right: 0;
+}
+
+/* lyrics div */
+#rightDiv{
+    /* border:2px solid #000; */
+    display: none;
+    width: 100%;
+    margin-top: 1%;
+    margin-left: 7%;
+    background: white;
+    border: 4px double #63ad77;
+}
+#lyricDiv {
+    width: 100%;
+}
+
 
 /* alexs after here */
 
-body{
+.themes{
     background-image: url("../images/background.jpg");
     background-size: cover;
 }
 
-.navbar-brand{
-display: inline;
+.abstract{
+    background-image: url("../images/abstract.jpg");
+    background-size: cover;
+}
 
+.space {
+    background-image: url("../images/space.jpg");
+    background-size: cover;
+}
+
+.beach{
+    background-image: url("../images/beach.jpg");
+    background-size: cover;
+}
+
+.rain{
+    background-image: url("../images/rain.jpg");
+    background-size: cover;
+}
+
+.lounge{
+    background-image: url("../images/lounge.jpg");
+    background-size: cover;
+}
+
+.coffee{
+    background-image: url("../images/coffee.jpg");
+    background-size: cover;
 }
 
 
-
-/* little spot logo top left */
-#spot{
-    width: 5%;
-    height: 5%;;
-    transform: rotate(180deg);
+#pics{
+    margin-top: 10px;
+    background: white;
+    border: solid black 3px;
+    padding: 10px;
+    display: inline-block;
+    
+  
 }
+
 
 /* background white, borders, spacing for the content sections */
-.sect{
+/* .sect {
     background: white;
     border: solid black 3px;
-    padding: 10px;
-    
-}
+    padding: 5px;
+
+} */
 
 /* spacing for the top two columns from the navbar */
-.vid, .lyrics{
+/* .vid,
+.lyrics {
     margin-top: 10px;
-}
-
-#nowplaying{
-    margin-top: 10px;
-    background: white;
-    border: solid black 3px;
-    padding: 10px;
-    
-}
+} */
