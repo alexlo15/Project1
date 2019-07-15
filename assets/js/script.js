@@ -133,13 +133,14 @@ $(document).ready(function () {
 
                                 widget();
 
+                            } else{
+                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
+
+                                $(".deezer-widget-player").attr("data-src", songURL);
+    
+                                widget();
                             }
 
-                            var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
-
-                            $(".deezer-widget-player").attr("data-src", songURL);
-
-                            widget();
                         }
 
                     });
