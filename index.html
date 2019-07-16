@@ -17,10 +17,11 @@
 <body class="themes">
     <!-- background -->
 
-
     <!-- nav bar -->
     <nav class="container-fluid">
-        <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s" src="assets/images/spot.jpg">
+        <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s" src="assets/images/spot.jpg"
+            data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
         <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
             <div class="row">
                 <div class="col-md-6">
@@ -55,20 +56,31 @@
     </nav>
 
     <!-- buttons for changing background -->
-    <div id="pics" class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s">
-        <div class="col-md-12">
-            <button type="button" id="but1" class="btn btn-outline-primary"> Space </button>
-            <button type="button" id="but2" class="btn btn-outline-secondary">Abstract</button>
-            <button type="button" id="but3" class="btn btn-outline-success">Beachy</button>
-            <button type="button" id="but4" class="btn btn-outline-danger">Rainy Day</button>
-            <button type="button" id="but5" class="btn btn-outline-warning">Lounge</button>
-            <button type="button" id="but6" class="btn btn-outline-info">Coffee Shop</button>
-        </div>
+    <!-- <div id="pics" class="row wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s"> -->
+    <!-- <div class="col-md-12">
+        <button type="button" id="but1" class="btn btn-outline-primary">Space </button><br>
+        <button type="button" id="but2" class="btn btn-outline-secondary">Abstract</button><br>
+        <button type="button" id="but3" class="btn btn-outline-success">Beachy</button><br>
+        <button type="button" id="but4" class="btn btn-outline-danger">Rainy Day</button><br>
+        <button type="button" id="but5" class="btn btn-outline-warning">Lounge</button><br>
+        <button type="button" id="but6" class="btn btn-outline-info">Coffee Shop</button>
+    </div> -->
 
-    </div>
+    <!-- </div> -->
 
     <div class="container-fluid">
         <div class="row">
+            <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
+                <div class="col-sm-1 collapse" id="collapseExample">
+                    <button type="button" id="but1" class="btn btn-outline-primary btn-sm">Space </button><br>
+                    <button type="button" id="but2" class="btn btn-outline-secondary btn-sm">Abstract</button><br>
+                    <button type="button" id="but3" class="btn btn-outline-success btn-sm">Beachy</button><br>
+                    <button type="button" id="but4" class="btn btn-outline-danger btn-sm">Rainy</button><br>
+                    <button type="button" id="but5" class="btn btn-outline-warning btn-sm">Lounge</button><br>
+                    <button type="button" id="but6" class="btn btn-outline-info btn-sm">Shop</button>
+                </div>
+            <!-- </div> -->
+
 
             <div class="col-md-5" id="leftDiv">
                 <!-- card that displays the image and the artist info -->
@@ -125,6 +137,10 @@
         </div> -->
     </div>
     <br>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

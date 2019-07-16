@@ -140,7 +140,7 @@ $(document).ready(function () {
                 trackUrl.attr('data-name', obj.message.body.track_list[i].track
                     .track_name);
 
-                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
+                trackUrl.html('<button type="button" class="btn btn-outline-success playMe"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
                 trackUrl.click(function () {
                     $("#rightDiv").show();
                     // $("#rightDiv").addClass('col-sm-5');
