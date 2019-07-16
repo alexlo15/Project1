@@ -63,8 +63,8 @@ $(document).ready(function () {
     $("#but6").on("click", function () {
         $("body").removeClass();
         $("body").addClass("coffee");
-        $("nav").css("background-image", "linear-gradient(-180deg, #f0a519ea, #283643)");
-        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519ea)");
+        $("nav").css("background-image", "linear-gradient(-180deg, #f0a519, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519)");
         $("footer").css("color", "grey");
         $("button.alo").removeClass("btn-warning btn-info btn-secondary btn-dark btn-primary btn-link btn-danger btn-light");
         $("button.alo").addClass("btn-success");
