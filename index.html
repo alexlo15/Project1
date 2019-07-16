@@ -17,125 +17,128 @@
 <body class="themes">
     <!-- background -->
 
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- nav bar -->
+            <nav class="container-fluid">
+                <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
+                    src="assets/images/spot.jpg">
+                <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 id="spatifyHeader">
+                                Jankify
+                            </h1>
+                            <h2>Spotify for cheapos!</h2>
 
-    <!-- nav bar -->
-    <nav class="container-fluid">
-        <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s" src="assets/images/spot.jpg">
-        <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 id="spatifyHeader">
-                        Jankify
-                    </h1>
-                    <h2>Spotify for cheapos!</h2>
-
-                </div>
-                <!-- user input of artist -->
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <!-- <h3>Enter Artist Name:</h3> -->
-                        <input type="text" class="form-control" placeholder="Enter Artist Name"
-                            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4"
-                            id="txtArtistName">
-                        <div class="input-group-append" id="button-addon4">
-                            <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
-                                Tracks</button>
-                            <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
-                                Event</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
-
-            <!-- </div> -->
-
-        </div>
-
-    </nav>
-
-  
-
-    <!-- user input of artist -->
-
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-md-5" id="leftDiv">
-                <!-- card that displays the image and the artist info -->
-                <div class="card mb-3" style="max-width: 540px;" id="artistCard">
-                    <div class="row no-gutters">
-                        <div class="col-md-4" id="artistPic">
-                            <!-- <img src="..." class="card-img" alt="..."> -->
-                        </div>
-                        <div class="col-md-8" id="artist-info">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- div that displays the lyrics -->
-                <div id="trackDiv">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="..." class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <!-- user input of artist -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <!-- <h3>Enter Artist Name:</h3> -->
+                                <input type="text" class="form-control" placeholder="Enter Artist Name"
+                                    aria-label="Recipient's username with two button addons"
+                                    aria-describedby="button-addon4" id="txtArtistName">
+                                <div class="input-group-append" id="button-addon4">
+                                    <button class="btn btn-success btn-sm" type="button" id="btnGetTracks">Get
+                                        Tracks</button>
+                                    <button class="btn btn-success btn-sm" type="button" id="checkEvent">Check
+                                        Event</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- This div will hold the tracks and Image -->
+                    <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
+
+                    <!-- </div> -->
+
                 </div>
-            </div>
+
+            </nav>
 
 
-            <div class="col-sm-5" id="rightDiv">
-                <!-- song player widget -->
-                <div class="deezer-widget-player"
-                    data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
-                    data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
-                    data-height="200">
-                </div>
-                <div id="lyricDiv">
-                    <!-- This div will hold the lyrics and events -->
+
+            <!-- user input of artist -->
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-5" id="leftDiv">
+                        <!-- card that displays the image and the artist info -->
+                        <div class="card mb-3" style="max-width: 540px;" id="artistCard">
+                            <div class="row no-gutters">
+                                <div class="col-md-4" id="artistPic">
+                                    <!-- <img src="..." class="card-img" alt="..."> -->
+                                </div>
+                                <div class="col-md-8" id="artist-info">
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- div that displays the lyrics -->
+                        <div id="trackDiv">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="..." class="card-img" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural
+                                                lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- This div will hold the tracks and Image -->
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-5" id="rightDiv">
+                        <!-- song player widget -->
+                        <div class="deezer-widget-player"
+                            data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+                            data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
+                            data-height="200">
+                        </div>
+                        <div id="lyricDiv">
+                            <!-- This div will hold the lyrics and events -->
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <br>
+
+
+
 
         </div>
-        <!-- <div id="artist-info">
-            Title artist info
+        <footer class="footnote">
+            <!-- buttons for changing background -->
+            <div id="pics">
 
-        </div> -->
+                <button type="button" id="but1" class="btn btn-outline-secondary"> Space </button>
+                <button type="button" id="but2" class="btn btn-outline-warning">Abstract</button>
+                <button type="button" id="but3" class="btn btn-outline-light">Beachy</button>
+                <button type="button" id="but4" class="btn btn-outline-primary">Rainy Day</button>
+                <button type="button" id="but5" class="btn btn-outline-danger">Lounge</button>
+                <button type="button" id="but6" class="btn btn-outline-info">Coffee Shop</button>
+                <button type="button" id="but7" class="btn btn-outline-success">Main</button>
+
+
+            </div>
+            © Alex Lo, Darius McPhatter, Dealan Diongzon, Hetal Patel, & Rishi Ajay
+        </footer>
     </div>
-    <br>
-      
 
-
-
-    <footer class="footnote">
-        <!-- buttons for changing background -->
-      <div id="pics">
-        
-            <button type="button" id="but1" class="btn btn-outline-secondary"> Space </button>
-            <button type="button" id="but2" class="btn btn-outline-warning">Abstract</button>
-            <button type="button" id="but3" class="btn btn-outline-light">Beachy</button>
-            <button type="button" id="but4" class="btn btn-outline-primary">Rainy Day</button>
-            <button type="button" id="but5" class="btn btn-outline-danger">Lounge</button>
-            <button type="button" id="but6" class="btn btn-outline-info">Coffee Shop</button>
-            <button type="button" id="but7" class="btn btn-outline-success">Main</button>
-    
-
-    </div>
-        © Alex Lo, Darius McPhatter, Dealan Diongzon, Hetal Patel, & Rishi Ajay
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

@@ -19,6 +19,16 @@ body {
     background-size: cover;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 75px;    /* Footer height */
+  }
+  
+
 /* -----------------Navbar Styling------------------ */
 /* little spot logo top left */
 #spot {
@@ -188,7 +198,7 @@ nav {
 
 /* click me to play styling */
 
-.btn-outline-success {
+.playMe {
     margin-top: 1%;
     margin-bottom: 4%;
 }
@@ -225,11 +235,15 @@ nav {
     background-image: linear-gradient(-180deg, #283643, #41be6d);
     text-align: center;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     /* left: 0; */
-    bottom: 0;
+    /* bottom: 0; */
     padding-top: 0.5%;
     padding-bottom: 0.5%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;  
 }
 
 
