@@ -7,11 +7,13 @@ $(document).ready(function () {
         $("body").addClass("space");
         $("nav").css("background-image", "linear-gradient(-180deg, #5500c3, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #5500c3)");
+
         $("footer").css("color", "rgb(241, 155, 208)");
         $("button.alo").removeClass("btn-success", "btn-primary", "btn-warning", "btn-link", "btn-dark", "btn-info","btn-danger","btn-light");
         $("button.alo").addClass("btn-secondary");
         
       });
+
 
 
     $("#but2").on("click", function () {
@@ -22,7 +24,7 @@ $(document).ready(function () {
         $("footer").css("color", "rgb(22, 6, 253)");
         $("button.alo").removeClass("btn-secondary btn-warning btn-success btn-link btn-dark btn-info btn-danger btn-light");  
         $("button.alo").addClass("btn-primary");
-        
+       
     });
 
     $("#but3").on("click", function () {
@@ -68,7 +70,7 @@ $(document).ready(function () {
         $("button.alo").addClass("btn-success");
     });
 
-      $("#but7").on("click", function() { 
+    $("#but7").on("click", function () {
         $("body").removeClass();
         $("body").addClass("themes");
         $("nav").css("background-image", "linear-gradient(-180deg, #41be6d, #283643)");
@@ -96,11 +98,11 @@ $(document).ready(function () {
         // $("#leftDiv").addClass('col-sm-7');
 
         $("#leftDiv").show();
- //we commented the two rows below out
-//         $("#trackDiv").show();
-//         $("#lyricDiv").empty();
+        //we commented the two rows below out
+        //         $("#trackDiv").show();
+        //         $("#lyricDiv").empty();
         // $("#rightDiv").empty();
-
+        $("#eventDiv").empty()
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -269,27 +271,27 @@ $(document).ready(function () {
 
         // To clear the input box on get track click
         // $("input:text").val('');
-        
-        function artistBio(){
-            
+
+        function artistBio() {
+
             var napsterKey = "NDI4OTM2NWMtNjUwMS00MTE2LWE1OWItMThmOWJkZDY0Mzdm"
 
-            var napsterUrl = "https://api.napster.com/v2.2/search?apikey=" + napsterKey + 
-            "&query=" + artistName + "&type=artist";
-            
+            var napsterUrl = "https://api.napster.com/v2.2/search?apikey=" + napsterKey +
+                "&query=" + artistName + "&type=artist";
+
             $.ajax({
                 url: "https://cors-anywhere.herokuapp.com/" + napsterUrl,
                 method: "Get"
-            }).then(function(response){  
-                $("#artist-info").empty();       
+            }).then(function (response) {
+                $("#artist-info").empty();
                 var bio = response.search.data.artists[0].bios[0].bio;
                 $("#artist-info").append(`<p>${bio}</p>`);
                 $("#artist-info").prepend("<h3>Artist Bio</h3>")
-                
 
-                
+
+
             })
-            
+
         }
 
     })
@@ -307,16 +309,18 @@ $(document).ready(function () {
         // alert('on check event');
         if (messageFlag === true) {
             $("#lyricDiv").empty();
-            $("#rightDiv").empty();
+            // $("#rightDiv").empty();
+            $("#playerDiv").empty();
 
         } else {
 
 
             $("#lyricDiv").empty();
+
             var artistName = $("#txtArtistName").val().trim();
             // $("#txtArtistName").val("");
             $("#rightDiv").show();
-
+            $("#playerDiv").empty();
 
 
             var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
