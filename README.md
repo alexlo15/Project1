@@ -1,4 +1,4 @@
-<h1> Jankify </h1>
+<h1> Not-ify </h1>
 
 <div>
 <p>
