@@ -8,7 +8,7 @@ $(document).ready(function () {
         $("nav").css("background-image", "linear-gradient(-180deg, #5500c3, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #5500c3)");
         $("#spatifyHeader").css("color:", "white;");
-      });
+    });
 
 
     $("#but2").on("click", function () {
@@ -17,16 +17,16 @@ $(document).ready(function () {
 
         $("nav").css("background-image", "linear-gradient(-180deg, #fffb00, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #fffb00)");
-      });
+    });
 
     $("#but3").on("click", function () {
         $("body").removeClass();
         $("body").addClass("beach");
-    
+
 
         $("nav").css("background-image", "linear-gradient(-180deg, #11fbb5, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #11fbb5)");
-      });
+    });
 
 
     $("#but4").on("click", function () {
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         $("nav").css("background-image", "linear-gradient(-180deg, #25009e, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #25009e)");
-      });
+    });
 
 
     $("#but5").on("click", function () {
@@ -43,21 +43,21 @@ $(document).ready(function () {
         $("body").addClass("lounge");
         $("nav").css("background-image", "linear-gradient(-180deg, #f60101, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f60101)");
-      });
+    });
 
     $("#but6").on("click", function () {
         $("body").removeClass();
         $("body").addClass("coffee");
         $("nav").css("background-image", "linear-gradient(-180deg, #f0a519ea, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519ea)");
-      });
+    });
 
-      $("#but7").on("click", function() { 
+    $("#but7").on("click", function () {
         $("body").removeClass();
         $("body").addClass("themes");
         $("nav").css("background-image", "linear-gradient(-180deg, #41be6d, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #41be6d)");
-      });
+    });
 
 
     $(function () {
@@ -77,11 +77,11 @@ $(document).ready(function () {
         // $("#leftDiv").addClass('col-sm-7');
 
         $("#leftDiv").show();
- //we commented the two rows below out
-//         $("#trackDiv").show();
-//         $("#lyricDiv").empty();
+        //we commented the two rows below out
+        //         $("#trackDiv").show();
+        //         $("#lyricDiv").empty();
         // $("#rightDiv").empty();
-
+        $("#eventDiv").empty()
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -250,27 +250,27 @@ $(document).ready(function () {
 
         // To clear the input box on get track click
         // $("input:text").val('');
-        
-        function artistBio(){
-            
+
+        function artistBio() {
+
             var napsterKey = "NDI4OTM2NWMtNjUwMS00MTE2LWE1OWItMThmOWJkZDY0Mzdm"
 
-            var napsterUrl = "https://api.napster.com/v2.2/search?apikey=" + napsterKey + 
-            "&query=" + artistName + "&type=artist";
-            
+            var napsterUrl = "https://api.napster.com/v2.2/search?apikey=" + napsterKey +
+                "&query=" + artistName + "&type=artist";
+
             $.ajax({
                 url: "https://cors-anywhere.herokuapp.com/" + napsterUrl,
                 method: "Get"
-            }).then(function(response){  
-                $("#artist-info").empty();       
+            }).then(function (response) {
+                $("#artist-info").empty();
                 var bio = response.search.data.artists[0].bios[0].bio;
                 $("#artist-info").append(`<p>${bio}</p>`);
                 $("#artist-info").prepend("<h3>Artist Bio</h3>")
-                
 
-                
+
+
             })
-            
+
         }
 
     })
@@ -288,16 +288,18 @@ $(document).ready(function () {
         // alert('on check event');
         if (messageFlag === true) {
             $("#lyricDiv").empty();
-            $("#rightDiv").empty();
+            // $("#rightDiv").empty();
+            $("#playerDiv").empty();
 
         } else {
 
 
             $("#lyricDiv").empty();
+
             var artistName = $("#txtArtistName").val().trim();
             // $("#txtArtistName").val("");
             $("#rightDiv").show();
-
+            $("#playerDiv").empty();
 
 
             var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
