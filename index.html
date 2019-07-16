@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/images/icon_spot.png" type="image/gif" sizes="20x20">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animation/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Notify | Spotify for Cheapos!</title>
+</head>
+
+<body class="themes container-fluid">
+
+    <!-- Div for the whole page -->
+    <div id="page-container" class="container-fluid">
+
+        <!-- Every div besides the footer so that the footer will stay down -->
+        <div id="content-wrap">
+
+            <!-- Nav bar -->
+            <nav class="container-fluid">
+
+                <!-- Upsidedown logo with fade in -->
+                <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
+                    src="assets/images/spot.jpg">
+
+                <!-- Text header & Input with fade in -->
+                <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
+                    <div class="row">
+
+                        <!-- Header Text -->
+                        <div class="col-12 col-md-6">
+                            <h1 id="spatifyHeader">Not-ify</h1>
+                            <h2>Spotify for cheapos!</h2>
+                        </div>
+
+                        <!-- User input of artist with get tracks & check events -->
+                        <div class="col-12 col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Artist Name"
+                                    aria-label="Recipient's username with two button addons"
+                                    aria-describedby="button-addon4" id="txtArtistName">
+                                <div class="input-group-append" id="button-addon4">
+                                    <button class="alo btn btn-dark btn-sm" type="button" id="btnGetTracks">Get
+                                        Tracks</button>
+                                    <button class="alo btn btn-dark btn-sm" type="button" id="checkEvent">Check
+                                        Event</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Body of the page -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Left Div - Artist Info with image & data in card -->
+                    <div class="col-12 col-md-5" id="leftDiv">
+                        <div class="card mb-3" style="max-width: 540px;" id="artistCard">
+                            <div class="row no-gutters">
+
+                                <!-- Image of artist -->
+                                <div class="col-12 col-md-4" id="artistPic">
+                                </div>
+
+                                <!-- Info of artist -->
+                                <div class="col-12 col-md-8" id="artist-info">
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Displays the tracks -->
+                        <div id="trackDiv">
+                        </div>
+                    </div>
+
+                    <!-- Right Div - Lyrics & Song Player Widget -->
+                    <div class="col-12 col-sm-5" id="rightDiv">
+
+                        <!-- Song player widget -->
+                        <div class="deezer-widget-player" id="playerDiv"
+                            data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
+                            data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
+                            data-height="200">
+                        </div>
+
+                        <!-- This div will hold the lyrics and events -->
+                        <div id="lyricDiv">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footnote">
+
+            <!-- buttons for changing background -->
+            <div id="pics">
+
+                <button type="button" id="but1" class="btn btn-outline-secondary"> Space </button>
+                <button type="button" id="but2" class="btn btn-outline-warning">Abstract</button>
+                <button type="button" id="but3" class="btn btn-outline-light">Beachy</button>
+                <button type="button" id="but4" class="btn btn-outline-primary">Rainy Day</button>
+                <button type="button" id="but5" class="btn btn-outline-danger">Lounge</button>
+                <button type="button" id="but6" class="btn btn-outline-info">Cafe</button>
+                <button type="button" id="but7" class="btn btn-outline-success">Main</button>
+
+            </div>
+          
+            <p class=footerNames>Not-ify© Alex Lo, Darius McPhatter, Dealan Diongzon, Hetal Patel, & Rishi Ajay</p>
+
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/WOW/wow.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- https://api.unsplash.com/ -->
+<!-- https://api.unsplash.com/photos/? -->
+<!-- GET /photos/:id -->
