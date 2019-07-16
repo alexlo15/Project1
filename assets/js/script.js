@@ -4,32 +4,60 @@ $(document).ready(function () {
     $("#but1").on("click", function () {
         $("body").removeClass()
         $("body").addClass("space");
-    });
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #5500c3, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #5500c3)");
+        $("#spatifyHeader").css("color:", "white;");
+      });
+
 
     $("#but2").on("click", function () {
         $("body").removeClass();
         $("body").addClass("abstract");
-    });
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #fffb00, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #fffb00)");
+      });
 
     $("#but3").on("click", function () {
         $("body").removeClass();
         $("body").addClass("beach");
-    });
+    
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #11fbb5, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #11fbb5)");
+      });
+
 
     $("#but4").on("click", function () {
         $("body").removeClass();
         $("body").addClass("rain");
-    });
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #25009e, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #25009e)");
+      });
+
 
     $("#but5").on("click", function () {
         $("body").removeClass();
         $("body").addClass("lounge");
-    });
+        $("nav").css("background-image", "linear-gradient(-180deg, #f60101, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f60101)");
+      });
 
     $("#but6").on("click", function () {
         $("body").removeClass();
         $("body").addClass("coffee");
-    });
+        $("nav").css("background-image", "linear-gradient(-180deg, #f0a519ea, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519ea)");
+      });
+
+      $("#but7").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("themes");
+        $("nav").css("background-image", "linear-gradient(-180deg, #41be6d, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #41be6d)");
+      });
 
 
     $(function () {
