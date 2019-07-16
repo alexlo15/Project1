@@ -48,6 +48,7 @@ h1, h2{
     border: 0 solid black;
     margin: 0 solid black;
     padding: 0 solid black;
+    
 }
 
 h2{
@@ -70,7 +71,8 @@ h3{
 } */
 
 nav{
-    background-image: linear-gradient(-180deg, #41be6d, #283643);
+        background-image: linear-gradient(-180deg, #41be6d, #283643);
+
     /* z-index: 2; */
 }
 
@@ -79,7 +81,7 @@ height: 7%;
 }
 
 .input-group{
-padding-top: 9%;
+padding-top: 3.5%;
 padding-bottom: 6%;
 }
 /* -----------------------USER INPUT--------------------------------- */
@@ -103,7 +105,7 @@ padding-bottom: 6%;
     margin-left: 5%;
     height: 450px;
     overflow: auto;
-    background: white;
+    background-color: rgba(223, 223, 223, 0.8);
     border: 4px double #63ad77;
     
 }
@@ -154,10 +156,7 @@ padding-bottom: 6%;
 }
 
 /* click me to play styling */
-.btn-outline-success{
-    margin-top: 1%;
-    margin-bottom: 4%;
-}
+
 
 .smallPlay {
     font-size: 14px;
@@ -174,14 +173,25 @@ padding-bottom: 6%;
     margin-left: 7%;
     height: 600px;
     overflow: auto;
-    background: white;
+    background-color: rgba(223, 223, 223, 0.8);  
     border: 4px double #63ad77;
 }
 #lyricDiv {
     width: 100%;
 }
 
-
+.footnote {
+    color: rgba(211, 211, 211, 0.514);
+    /* background-color: black; */
+    background-image: linear-gradient(-180deg, #283643, #41be6d);
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    /* left: 0; */
+    bottom: 0;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
 /* alexs after here */
 
 .themes{
@@ -239,14 +249,13 @@ padding-bottom: 6%;
 
 
 #pics{
-    margin-top: 10px;
-    background: white;
-    border: solid black 3px;
-    padding: 10px;
-    display: inline-block;
-    
+    display: flex;
+  align-items: center;
+  justify-content: center;
   
 }
+
+
 
 
 /* background white, borders, spacing for the content sections */
