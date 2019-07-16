@@ -1,34 +1,62 @@
 $(document).ready(function () {
-// button functions to add/remove classes with image settings
-
-    $("#but1").on("click", function() { 
+    // button functions to add/remove classes with image settings
+    var messageFlag = false;
+    $("#but1").on("click", function () {
         $("body").removeClass()
         $("body").addClass("space");
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #5500c3, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #5500c3)");
+        $("#spatifyHeader").css("color:", "white;");
       });
 
-      $("#but2").on("click", function() { 
+
+    $("#but2").on("click", function () {
         $("body").removeClass();
         $("body").addClass("abstract");
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #fffb00, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #fffb00)");
       });
 
-      $("#but3").on("click", function() { 
+    $("#but3").on("click", function () {
         $("body").removeClass();
         $("body").addClass("beach");
+    
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #11fbb5, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #11fbb5)");
       });
 
-      $("#but4").on("click", function() { 
+
+    $("#but4").on("click", function () {
         $("body").removeClass();
         $("body").addClass("rain");
+
+        $("nav").css("background-image", "linear-gradient(-180deg, #25009e, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #25009e)");
       });
 
-      $("#but5").on("click", function() { 
+
+    $("#but5").on("click", function () {
         $("body").removeClass();
         $("body").addClass("lounge");
+        $("nav").css("background-image", "linear-gradient(-180deg, #f60101, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f60101)");
       });
 
-      $("#but6").on("click", function() { 
+    $("#but6").on("click", function () {
         $("body").removeClass();
         $("body").addClass("coffee");
+        $("nav").css("background-image", "linear-gradient(-180deg, #f0a519ea, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519ea)");
+      });
+
+      $("#but7").on("click", function() { 
+        $("body").removeClass();
+        $("body").addClass("themes");
+        $("nav").css("background-image", "linear-gradient(-180deg, #41be6d, #283643)");
+        $("footer").css("background-image", "linear-gradient(-180deg, #283643, #41be6d)");
       });
 
 
@@ -47,7 +75,13 @@ $(document).ready(function () {
         e.preventDefault();
         // $("#leftDiv").removeClass('col-sm-5');
         // $("#leftDiv").addClass('col-sm-7');
+
         $("#leftDiv").show();
+ //we commented the two rows below out
+//         $("#trackDiv").show();
+//         $("#lyricDiv").empty();
+        // $("#rightDiv").empty();
+
         resetFields();
         // This will print artist name from textbox and append to musicDiv
         // trackArtist = $("<h1>");
@@ -81,7 +115,7 @@ $(document).ready(function () {
             }).then(function (response) {
                 var obj = JSON.parse(response);
                 console.log(obj);
-                
+
                 // loop to display all tracks of the artist
                 displayTrackFunction(obj);
                 $("#trackDiv").trigger("click");
@@ -109,96 +143,110 @@ $(document).ready(function () {
         }
 
         function displayTrackFunction(obj) {
+            // This code will check for the records only show for correct name entered.
+            if (obj.message.body.track_list.length === 0) {
+                $("#trackDiv").empty();
+                var messageH2 = $("<h2>");
+                messageH2.attr("id", 'messageH2');
+                messageH2.text("Error in typing name of Artist, Check it again");
+                $("#trackDiv").append(messageH2);
+                $("#rightDiv").empty();
+                messageFlag = true;
+            } else {
+                messageFlag = false;
+                // used for song widget
+                var songArtistName = obj.message.body.track_list[0].track.artist_name;
 
-            // used for song widget
-            var songArtistName = obj.message.body.track_list[0].track.artist_name;
-            
-            console.log(songArtistName);
+                console.log(songArtistName);
 
-            //used for displaying track
-            for (var i = 0; i < obj.message.body.track_list.length; i++) {
+                //used for displaying track
+                for (var i = 0; i < obj.message.body.track_list.length; i++) {
 
-                var trackAlbumName = $("<h2>");
-                trackAlbumName.addClass('albumNameClass')
-                var trackName = $("<p>");
-                var trackUrl = $("<a>");
+                    var trackAlbumName = $("<h2>");
+                    trackAlbumName.addClass('albumNameClass')
+                    var trackName = $("<p>");
+                    var trackUrl = $("<a>");
 
-                trackAlbumName.text(i + 1 + ". " + "Album: " + obj.message.body.track_list[i]
-                    .track
-                    .album_name);
-                trackName.text("Track: " + obj.message.body.track_list[i].track
-                    .track_name);
+                    trackAlbumName.text(i + 1 + ". " + "Album: " + obj.message.body.track_list[i]
+                        .track
+                        .album_name);
+                    trackName.text("Track: " + obj.message.body.track_list[i].track
+                        .track_name);
 
 
-                $("#trackDiv").append(trackAlbumName, trackName);
+                    $("#trackDiv").append(trackAlbumName, trackName);
 
-                // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
+                    // This will add anchor tag and trigger click of that  tag and display lyric in lyricDiv
 
-                trackUrl.attr('id', 'trackUrl');
-                trackUrl.attr('data-trackUrl', obj.message.body.track_list[i].track
-                    .track_share_url)
-                trackUrl.attr('data-name', obj.message.body.track_list[i].track
-                    .track_name);
+                    trackUrl.attr('id', 'trackUrl');
+                    trackUrl.attr('data-trackUrl', obj.message.body.track_list[i].track
+                        .track_share_url)
+                    trackUrl.attr('data-name', obj.message.body.track_list[i].track
+                        .track_name);
 
-                trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
-                trackUrl.click(function () {
-                    $("#rightDiv").show();
-                    // $("#rightDiv").addClass('col-sm-5');
-                    $("#lyricDiv").empty();
-                    var iframeTrack = $("<iframe>");
-                    iframeTrack.attr('id', 'iframeTrack')
-                    var trackDisplayUrl = $(this).attr('data-trackUrl');
-                    iframeTrack.attr('src', trackDisplayUrl);
-                    $("#lyricDiv").append(iframeTrack);
+                    trackUrl.html('<button type="button" class="btn btn-outline-success"><i class="fas fa-play-circle smallPlay"></i> Click Me For Lyrics</button>')
+                    trackUrl.click(function () {
+                        $("#rightDiv").show();
+                        // $("#rightDiv").addClass('col-sm-5');
+                        $("#lyricDiv").empty();
+                        var iframeTrack = $("<iframe>");
+                        iframeTrack.attr('id', 'iframeTrack')
+                        var trackDisplayUrl = $(this).attr('data-trackUrl');
+                        iframeTrack.attr('src', trackDisplayUrl);
+                        $("#lyricDiv").append(iframeTrack);
 
-                    //Code for song widget
-                    var songName = $(this).attr('data-name');
-                    console.log(songName);
+                        //Code for song widget
+                        var songName = $(this).attr('data-name');
+                        console.log(songName);
 
-                    var songLookUpURL = "https://api.deezer.com/search/track?q=" + songName;
-                    $.ajax({
-                        url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
-                        method: "GET"
-                    }).then(function (response) {
+                        var songLookUpURL = "https://api.deezer.com/search/track?q=" + songName;
+                        $.ajax({
+                            url: "https://cors-anywhere.herokuapp.com/" + songLookUpURL,
+                            method: "GET"
+                        }).then(function (response) {
 
-                        var i = 0;
-                        artistMatches = false;
+                            var i = 0;
+                            artistMatches = false;
 
-                        while(artistMatches == false){
+                            while (artistMatches == false) {
 
-                            console.log("went into the while loop")
+                                console.log("went into the while loop")
                                 if (response.data[i].artist.name == songArtistName) {
-                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
+                                    var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[i].id;
 
-                                $(".deezer-widget-player").attr("data-src", songURL);
+                                    $(".deezer-widget-player").attr("data-src", songURL);
 
-                                widget();
-                                artistMatches = true;
+                                    widget();
+                                    artistMatches = true;
+                                }
+                                i++;
+
+                                if (i === response.data.length) {
+                                    var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
+
+
+                                    $(".deezer-widget-player").attr("data-src", songURL);
+
+                                    widget();
+                                    artistMatches = true;
+                                }
+
                             }
-                            i++;
 
-                            if(i === response.data.length){
-                                var songURL = "https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=" + response.data[0].id;
-
-        
-                                $(".deezer-widget-player").attr("data-src", songURL);
-        
-                                widget();
-                                artistMatches = true;
-                            }
-
-                        }
+                        });
 
                     });
 
-                });
+
+                    $("#trackDiv").append(trackUrl);
 
 
-                $("#trackDiv").append(trackUrl);
-
-
+                }
             }
+            // To clear the input box on get track click
+            // $("input:text").val('');
         }
+
         // To clear the input box on get track click
         // $("input:text").val('');
         
@@ -223,6 +271,7 @@ $(document).ready(function () {
             })
             
         }
+
     })
 
     function resetFields() {
@@ -236,55 +285,63 @@ $(document).ready(function () {
     $("#checkEvent").on('click', function (e) {
         e.preventDefault();
         // alert('on check event');
-        $("#lyricDiv").empty();
-        var artistName = $("#txtArtistName").val().trim();
-        // $("#txtArtistName").val("");
-        $("#rightDiv").show();
+        if (messageFlag === true) {
+            $("#lyricDiv").empty();
+            $("#rightDiv").empty();
+
+        } else {
+
+
+            $("#lyricDiv").empty();
+            var artistName = $("#txtArtistName").val().trim();
+            // $("#txtArtistName").val("");
+            $("#rightDiv").show();
 
 
 
-        var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
-            "?app_id=70db470b-35d4-4cf4-8624-428f3b573263";
-        $.ajax({
-            url: eventQueryURL,
-            method: 'GET'
-        }).then(function (response) {
-            console.log(response);
+            var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
+                "?app_id=70db470b-35d4-4cf4-8624-428f3b573263";
+            $.ajax({
+                url: eventQueryURL,
+                method: 'GET'
+            }).then(function (response) {
+                console.log(response);
 
-            var eventDiv = $("<div>");
+                var eventDiv = $("<div>");
 
-            eventDiv.attr('id', 'eventDiv');
+                eventDiv.attr('id', 'eventDiv');
 
-            var artistImageUrl = response.thumb_url;
-            var artistImage = $("<img>");
-            artistImage.attr('id', 'artistImage');
-            artistImage.attr('src', artistImageUrl);
+                var artistImageUrl = response.thumb_url;
+                var artistImage = $("<img>");
+                artistImage.attr('id', 'artistImage');
+                artistImage.attr('src', artistImageUrl);
 
-            eventDiv.prepend(artistImage);
+                eventDiv.prepend(artistImage);
 
-            var upcomingEvents = $("<h2>").text("Upcoming events: " + response.upcoming_event_count);
-            var goToArtist = $("<a>").text("See Tour Dates");
-            goToArtist.attr('id', 'eventCheckDate');
-            goToArtist.click(function () {
+                var upcomingEvents = $("<h2>").text("Upcoming events: " + response.upcoming_event_count);
+                var goToArtist = $("<a>").text("See Tour Dates");
+                goToArtist.attr('id', 'eventCheckDate');
+                goToArtist.click(function () {
 
-                $("#lyricDiv").empty();
-                var iframeDiv = $("<div>");
-                var enventIframe = $("<iframe>");
-                enventIframe.attr('src', response.url);
-                enventIframe.attr('id', 'eventIFrame');
-                iframeDiv.append(enventIframe);
+                    $("#lyricDiv").empty();
+                    var iframeDiv = $("<div>");
+                    var enventIframe = $("<iframe>");
+                    enventIframe.attr('src', response.url);
+                    enventIframe.attr('id', 'eventIFrame');
+                    iframeDiv.append(enventIframe);
 
-                // eventDiv.append(enventIframe);
-                $("#lyricDiv").append(iframeDiv);
-                // $(this).fadeTo("fast", .5).removeAttr("src");
-            });
-            // goToArtist.attr("disabled","disabled");
+                    // eventDiv.append(enventIframe);
+                    $("#lyricDiv").append(iframeDiv);
+                    // $(this).fadeTo("fast", .5).removeAttr("src");
+                });
+                // goToArtist.attr("disabled","disabled");
 
 
 
-            eventDiv.append(upcomingEvents, goToArtist);
-            $("#lyricDiv").append(eventDiv);
-        })
+                eventDiv.append(upcomingEvents, goToArtist);
+                $("#lyricDiv").append(eventDiv);
+            })
+        }
     });
 
 
