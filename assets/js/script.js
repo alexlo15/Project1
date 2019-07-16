@@ -1,41 +1,51 @@
 $(document).ready(function () {
     // button functions to add/remove classes with image settings
     var messageFlag = false;
+    
     $("#but1").on("click", function () {
         $("body").removeClass()
         $("body").addClass("space");
-
         $("nav").css("background-image", "linear-gradient(-180deg, #5500c3, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #5500c3)");
-        $("#spatifyHeader").css("color:", "white;");
+        $("footer").css("color", "rgb(241, 155, 208)");
+        $("button.alo").removeClass("btn-success", "btn-primary", "btn-warning", "btn-link", "btn-dark", "btn-info","btn-danger","btn-light");
+        $("button.alo").addClass("btn-secondary");
+        
       });
 
 
     $("#but2").on("click", function () {
         $("body").removeClass();
         $("body").addClass("abstract");
-
         $("nav").css("background-image", "linear-gradient(-180deg, #fffb00, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #fffb00)");
-      });
+        $("footer").css("color", "rgb(22, 6, 253)");
+        $("button.alo").removeClass("btn-secondary btn-warning btn-success btn-link btn-dark btn-info btn-danger btn-light");  
+        $("button.alo").addClass("btn-primary");
+        
+    });
 
     $("#but3").on("click", function () {
         $("body").removeClass();
         $("body").addClass("beach");
-    
-
         $("nav").css("background-image", "linear-gradient(-180deg, #11fbb5, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #11fbb5)");
-      });
+        $("footer").css("color", "sandybrown");
+        $("button.alo").removeClass("btn-warning btn-secondary btn-success btn-link btn-dark btn-primary btn-danger btn-light");
+        $("button.alo").addClass("btn-info");
+        ;
+    });
 
 
     $("#but4").on("click", function () {
         $("body").removeClass();
         $("body").addClass("rain");
-
         $("nav").css("background-image", "linear-gradient(-180deg, #25009e, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #25009e)");
-      });
+        $("footer").css("color", "rgb(246, 132, 132)");
+        $("button.alo").removeClass("btn-warning btn-info btn-secondary btn-success btn-link btn-dark btn-primary btn-danger btn-light");
+        $("button.alo").addClass("btn-link");
+    });
 
 
     $("#but5").on("click", function () {
@@ -43,21 +53,30 @@ $(document).ready(function () {
         $("body").addClass("lounge");
         $("nav").css("background-image", "linear-gradient(-180deg, #f60101, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f60101)");
-      });
+        $("footer").css("color", "gold");
+        $("button.alo").removeClass("btn-success btn-info btn-secondary btn-dark btn-primary btn-link btn-danger btn-light");
+        $("button.alo").addClass("btn-warning");
+    });
 
     $("#but6").on("click", function () {
         $("body").removeClass();
         $("body").addClass("coffee");
         $("nav").css("background-image", "linear-gradient(-180deg, #f0a519ea, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #f0a519ea)");
-      });
+        $("footer").css("color", "grey");
+        $("button.alo").removeClass("btn-warning btn-info btn-secondary btn-dark btn-primary btn-link btn-danger btn-light");
+        $("button.alo").addClass("btn-success");
+    });
 
       $("#but7").on("click", function() { 
         $("body").removeClass();
         $("body").addClass("themes");
         $("nav").css("background-image", "linear-gradient(-180deg, #41be6d, #283643)");
         $("footer").css("background-image", "linear-gradient(-180deg, #283643, #41be6d)");
-      });
+        $("footer").css("color", "black");
+        $("button.alo").removeClass("btn-success btn-info btn-secondary btn-success btn-primary btn-link btn-danger btn-light");
+        $("button.alo").addClass("btn-dark");
+    });
 
 
     $(function () {
