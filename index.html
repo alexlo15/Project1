@@ -15,27 +15,33 @@
 </head>
 
 <body class="themes">
-    <!-- background -->
 
+    <!-- Div for the whole page -->
     <div id="page-container">
+
+        <!-- Every div besides the footer so that the footer will stay down -->
         <div id="content-wrap">
-            <!-- nav bar -->
+
+            <!-- Nav bar -->
             <nav class="container-fluid">
+
+                <!-- Upsidedown logo with fade in -->
                 <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
                     src="assets/images/spot.jpg">
+
+                <!-- Text header & Input with fade in -->
                 <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h1 id="spatifyHeader">
-                                Jankify
-                            </h1>
-                            <h2>Spotify for cheapos!</h2>
 
+                        <!-- Header Text -->
+                        <div class="col-md-6">
+                            <h1 id="spatifyHeader">Jankify</h1>
+                            <h2>Spotify for cheapos!</h2>
                         </div>
-                        <!-- user input of artist -->
+
+                        <!-- User input of artist with get tracks & check events -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <!-- <h3>Enter Artist Name:</h3> -->
                                 <input type="text" class="form-control" placeholder="Enter Artist Name"
                                     aria-label="Recipient's username with two button addons"
                                     aria-describedby="button-addon4" id="txtArtistName">
@@ -48,28 +54,23 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="wow fadeInDown" data-wow-duration="5s" data-wow-delay=".8s" id='nowplaying'> -->
-
-                    <!-- </div> -->
-
                 </div>
-
             </nav>
 
-
-
-            <!-- user input of artist -->
-
+            <!-- Body of the page -->
             <div class="container-fluid">
                 <div class="row">
 
+                    <!-- Left Div - Artist Info with image & data in card -->
                     <div class="col-md-5" id="leftDiv">
-                        <!-- card that displays the image and the artist info -->
                         <div class="card mb-3" style="max-width: 540px;" id="artistCard">
                             <div class="row no-gutters">
+
+                                <!-- Image of artist -->
                                 <div class="col-md-4" id="artistPic">
-                                    <!-- <img src="..." class="card-img" alt="..."> -->
                                 </div>
+
+                                <!-- Info of artist -->
                                 <div class="col-md-8" id="artist-info">
                                     <div class="card-body">
                                     </div>
@@ -77,49 +78,28 @@
                             </div>
                         </div>
 
-                        <!-- div that displays the lyrics -->
+                        <!-- Displays the tracks -->
                         <div id="trackDiv">
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="..." class="card-img" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural
-                                                lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- This div will hold the tracks and Image -->
                         </div>
                     </div>
 
-
+                    <!-- Right Div - Lyrics & Song Player Widget -->
                     <div class="col-sm-5" id="rightDiv">
-                        <!-- song player widget -->
+
+                        <!-- Song player widget -->
                         <div class="deezer-widget-player"
                             data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id="
                             data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200"
                             data-height="200">
                         </div>
+
+                        <!-- This div will hold the lyrics and events -->
                         <div id="lyricDiv">
-                            <!-- This div will hold the lyrics and events -->
                         </div>
                     </div>
 
                 </div>
             </div>
-            <br>
-
-
-
-
         </div>
         <footer class="footnote">
             <!-- buttons for changing background -->

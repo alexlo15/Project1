@@ -255,11 +255,11 @@ $(document).ready(function () {
             
             var napsterKey = "NDI4OTM2NWMtNjUwMS00MTE2LWE1OWItMThmOWJkZDY0Mzdm"
 
-            var napsterUrl = "http://api.napster.com/v2.2/search?apikey=" + napsterKey + 
+            var napsterUrl = "https://api.napster.com/v2.2/search?apikey=" + napsterKey + 
             "&query=" + artistName + "&type=artist";
             
             $.ajax({
-                url: napsterUrl,
+                url: "https://cors-anywhere.herokuapp.com/" + napsterUrl,
                 method: "Get"
             }).then(function(response){  
                 $("#artist-info").empty();       
