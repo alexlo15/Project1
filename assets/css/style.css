@@ -60,6 +60,7 @@ h2 {
     border: 0 solid black;
     margin: 0 solid black;
     padding: 0 solid black;
+    text-shadow: 1px 2px #945d05;
     
 }
 
@@ -71,6 +72,10 @@ h3 {
     font-size: 20px;
 }
 
+p.footerNames{
+    color: lightgrey;
+    text-shadow: 1px 1px #945d05;   
+}
 /* .fas, .fa-play-circle{
     padding-top: 1%;
     padding-right: 2%;
@@ -92,8 +97,8 @@ nav {
 }
 
 .input-group {
-    padding-top: 9%;
-    padding-bottom: 6%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 
 }
 
@@ -226,6 +231,7 @@ nav {
 
 #lyricDiv {
     width: 100%;
+   
 }
 
 
@@ -255,6 +261,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: black;
 }
 
 .abstract {
@@ -263,6 +270,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: rgb(22, 6, 253);
 }
 
 .space {
@@ -271,6 +279,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: rgb(241, 155, 208);
 }
 
 .beach {
@@ -279,6 +288,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: sandybrown;
 }
 
 .rain {
@@ -287,6 +297,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: rgb(246, 132, 132);
 }
 
 .lounge {
@@ -295,6 +306,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: gold;
 }
 
 .coffee {
@@ -303,6 +315,7 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: grey;
 }
 
 
