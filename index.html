@@ -14,7 +14,7 @@
     <title>Not-ify | Spotify for Cheapos!</title>
 </head>
 
-<body class="themes container-fluid">
+<body class="themes">
 
     <!-- Div for the whole page -->
     <div id="page-container" class="container-fluid">
@@ -23,24 +23,25 @@
         <div id="content-wrap">
 
             <!-- Nav bar -->
-            <nav class="container-fluid">
+            <nav class="container-fluid" id="navBar">
 
                 <!-- Upsidedown logo with fade in -->
+                <a href="https://alexlo15.github.io/Project1/">
                 <img id="spot" class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s"
                     src="assets/images/spot.jpg">
-
+                </a>
                 <!-- Text header & Input with fade in -->
                 <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".2s">
                     <div class="row">
 
                         <!-- Header Text -->
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-sm-6">
                             <h1 id="spatifyHeader">Not-ify</h1>
                             <h2>Spotify for cheapos!</h2>
                         </div>
 
                         <!-- User input of artist with get tracks & check events -->
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-sm-6">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Enter Artist Name"
                                     aria-label="Recipient's username with two button addons"
@@ -62,16 +63,16 @@
                 <div class="row">
 
                     <!-- Left Div - Artist Info with image & data in card -->
-                    <div class="col-12 col-md-5" id="leftDiv">
+                    <div class="col-12 col-sm-5" id="leftDiv">
                         <div class="card mb-3" style="max-width: 540px;" id="artistCard">
                             <div class="row no-gutters">
 
                                 <!-- Image of artist -->
-                                <div class="col-12 col-md-4" id="artistPic">
+                                <div class="col-12 col-sm-4" id="artistPic">
                                 </div>
 
                                 <!-- Info of artist -->
-                                <div class="col-12 col-md-8" id="artist-info">
+                                <div class="col-12 col-sm-8" id="artist-info">
                                     <div class="card-body">
                                     </div>
                                 </div>
@@ -100,27 +101,25 @@
 
                 </div>
             </div>
+            <footer class="footnote"> 
+                    <!-- footer navbar-fixed-bottom -->
+                   <!-- buttons for changing background -->
+                   <div id="pics">
+       
+                       <button type="button" id="but1" class="btn btn-outline-secondary"> Space </button>
+                       <button type="button" id="but2" class="btn btn-outline-warning">Abstract</button>
+                       <button type="button" id="but3" class="btn btn-outline-light">Beachy</button>
+                       <button type="button" id="but4" class="btn btn-outline-primary">Rainy Day</button>
+                       <button type="button" id="but5" class="btn btn-outline-danger">Lounge</button>
+                       <button type="button" id="but6" class="btn btn-outline-info">Cafe</button>
+                       <button type="button" id="but7" class="btn btn-outline-success">Main</button>
+       
+       
+                   </div>
+                   <p class='footerNames'>Not-ify© Alex Lo, Darius McPhatter, Dealan Diongzon, Hetal Patel, & Rishi Ajay</p>
+               </footer>
         </div>
-
-        <!-- Footer -->
-        <footer class="footnote">
-
-            <!-- buttons for changing background -->
-            <div id="pics">
-
-                <button type="button" id="but1" class="btn btn-outline-secondary"> Space </button>
-                <button type="button" id="but2" class="btn btn-outline-warning">Abstract</button>
-                <button type="button" id="but3" class="btn btn-outline-light">Beachy</button>
-                <button type="button" id="but4" class="btn btn-outline-primary">Rainy</button>
-                <button type="button" id="but5" class="btn btn-outline-danger">Lounge</button>
-                <button type="button" id="but6" class="btn btn-outline-info">Cafe</button>
-                <button type="button" id="but7" class="btn btn-outline-success">Main</button>
-
-            </div>
-          
-            <p class=footerNames>Not-ify© Alex Lo, Darius McPhatter, Dealan Diongzon, Hetal Patel, & Rishi Ajay</p>
-
-        </footer>
+       
     </div>
 
 
