@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     // -------------------------------------------Global Variables----------------------------------------------------//
     var messageFlag = false;
-    var trackArtist = $("<h1>");
 
     // -------------------------------------------Buttons for changing the theme----------------------------------------------------//
     $("#but1").on("click", function () {
@@ -94,6 +93,7 @@ $(document).ready(function () {
         resetFields();
 
         // This will print artist name from textbox and append to trackDiv
+        var trackArtist = $("<h1>");
         trackArtist.addClass('artistHeadling');
         trackArtist.text(artistName);
         $("#trackDiv").append(trackArtist);
@@ -270,7 +270,6 @@ $(document).ready(function () {
     })
 
 // -------------------------------------------Click Function for Check Events Button-----------------------------------------------//
-
     $("#checkEvent").on('click', function (e) {
         e.preventDefault();
         if (messageFlag === true) {
@@ -278,72 +277,66 @@ $(document).ready(function () {
             $("#playerDiv").empty();
         } 
         else {
-
-
-            $("#lyricDiv").empty();
-
+            // Saves the artists name from the user input & removes whatever is in the lyric and player divs & shows the events
             var artistName = $("#txtArtistName").val().trim();
-            // $("#txtArtistName").val("");
-            $("#rightDiv").show();
+            $("#lyricDiv").empty();
             $("#playerDiv").empty();
+            $("#rightDiv").show();
 
-
+            // Creates a queryURL for the AJAX call to bandsintown
             var eventQueryURL = "https://rest.bandsintown.com/artists/" + artistName +
                 "?app_id=70db470b-35d4-4cf4-8624-428f3b573263";
+
             $.ajax({
                 url: eventQueryURL,
                 method: 'GET'
             }).then(function (response) {
-                console.log(response);
-
+                //Creates the div that will hold the artist image and the upcoming events
                 var eventDiv = $("<div>");
-
                 eventDiv.attr('id', 'eventDiv');
 
+                // takes the url for the artist image and creates an img tag for it and appends it to the eventDiv
                 var artistImageUrl = response.thumb_url;
                 var artistImage = $("<img>");
                 artistImage.attr('id', 'artistImage');
                 artistImage.attr('src', artistImageUrl);
-
                 eventDiv.prepend(artistImage);
 
+                //sets the text for Upcoming events and Tour dates
                 var upcomingEvents = $("<h2>").text("Upcoming events: " + response.upcoming_event_count);
                 var goToArtist = $("<a>").text("See Tour Dates");
                 goToArtist.attr('id', 'eventCheckDate');
+
+                // sets the click function for when the user sees the tour dates
                 goToArtist.click(function () {
 
+                    //empties the lyrics div incase there's anything inside of it & and creates a new div to put the URL of the events
                     $("#lyricDiv").empty();
                     var iframeDiv = $("<div>");
                     var enventIframe = $("<iframe>");
                     enventIframe.attr('src', response.url);
                     enventIframe.attr('id', 'eventIFrame');
                     iframeDiv.append(enventIframe);
-
-                    // eventDiv.append(enventIframe);
-                    $("#lyricDiv").append(iframeDiv);
-                    // $(this).fadeTo("fast", .5).removeAttr("src");
+                    eventDiv.append(enventIframe);
+                    $("#lyricDiv").append(eventDiv);
                 });
-                // goToArtist.attr("disabled","disabled");
 
-
-
+                // displays all Divs to the lyric Div
                 eventDiv.append(upcomingEvents, goToArtist);
                 $("#lyricDiv").append(eventDiv);
             })
         }
     });
-
-
-
 })
 
+// -------------------------------------------Function to reset all the DIVs-----------------------------------------------//
 function resetFields() {
     $("#artistImage").empty();
     $("#trackDiv").empty();
 }
 
 
-// function that needs to be put in order for the song widget to show up
+// -------------------------------------------Function to display the song player widget-----------------------------------------------//
 function widget() {
     var w = document[typeof document.getElementsByClassName === 'function' ? 'getElementsByClassName' : 'querySelectorAll']('deezer-widget-player');
     for (var i = 0, l = w.length; i < l; i++) {
