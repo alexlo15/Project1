@@ -13,11 +13,39 @@
     border-bottom: 2px solid #000;
 }
 
+body,
+html {
+    height: 100%;
+}
+
+h1,
+h2 {
+    font-family: 'Maven Pro', sans-serif;
+   
+    border: 0 solid black;
+    margin: 0 solid black;
+    padding: 0 solid black;
+    text-shadow: 1px 2px #945d05;
+
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+
 body {
-    background-image: url("../images/background.jpg");
+    height: 100%;
+    background-image: #ccc url("../images/background.jpg");
     /* background-image: linear-gradient(to right, #379c59, #377a9c); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    width: 100%;
 }
 
 #page-container {
@@ -26,32 +54,31 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  
-  #content-wrap {
-    padding-bottom: 75px;    /* Footer height */
+}
+
+#content-wrap {
+    padding-bottom: 75px;
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  
+}
+
 
 /* -----------------Navbar Styling------------------ */
 /* little spot logo top left */
 #spot {
     width: 5%;
     height: 5%;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 85px;
+    min-height: 85px;
     transform: rotate(180deg);
     float: left;
-    /* margin-bottom: 2%; */
+   
 }
 
 #spatifyHeader {
-    /* margin-top: 5%; */
-    /* display: inline-block; */
-    font-size: 48px;
+    
+    font-size: 2em;
 
 }
 
@@ -60,44 +87,16 @@ body {
     text-align: right;
 }
 
-h1,
-h2 {
-    font-family: 'Maven Pro', sans-serif;
-    width: 50%;
-    border: 0 solid black;
-    margin: 0 solid black;
-    padding: 0 solid black;
-    text-shadow: 1px 2px #945d05;
-    
-}
-
-h2 {
-    font-size: 20px;
-}
-
-h3 {
-    font-size: 20px;
-}
-
-p.footerNames{
+p.footerNames {
     color: lightgrey;
-    text-shadow: 1px 1px #945d05;   
+    text-shadow: 1px 1px #945d05;
+    margin-bottom: 0;
 }
-/* .fas, .fa-play-circle{
-    padding-top: 1%;
-    padding-right: 2%;
-    font-size: 175px;
-} */
 
-/* .navbar-brand {
-    display: inline;
-
-} */
 
 nav {
     background-image: linear-gradient(-180deg, #41be6d, #283643);
     width: 100%;
-    /* z-index: 2; */
 }
 
 .container-fluid {
@@ -119,13 +118,6 @@ nav {
     border: 1px solid lightgray;
 }
 
-/* #nowplaying {
-    margin-top: 10px;
-    background: transparent;
-    padding: 10px;
-    padding-bottom: 25px;
-
-} */
 
 /* ---------------Dynamic Generated Elements Stylings --------==- */
 /*-------------------------TRACK LISTINGS------------------------*/
@@ -134,23 +126,21 @@ nav {
     display: none;
     margin-top: 1%;
     margin-left: 5%;
-    height: 450px;
+    height: 500px;
     overflow: auto;
-    /* background: white; */
     border: 4px double #63ad77;
     background-color: rgba(255, 255, 255, 0.8);
-    height: 600px;
 }
 
-#artistCard{
+#artistCard {
     margin-top: 4%;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* trackDiv was converted to leftDiv */
 /* #trackDiv { */
-    /* display: none; */
-    /* margin-top: 1%;
+/* display: none; */
+/* margin-top: 1%;
     margin-left: 5%;
     height: 450px;
     overflow: auto;
@@ -168,7 +158,6 @@ nav {
     border: 1px solid #000;
     padding: 5px;
     border-radius: 5px;
-    /* display: none; */
 }
 
 #artist-info {
@@ -226,49 +215,51 @@ nav {
 
 /* lyrics div */
 #rightDiv {
-    /* border:2px solid #000; */
     padding-top: 1.5%;
     display: none;
     width: 100%;
     margin-top: 1%;
     margin-left: 7%;
-    height: 600px;
+    height: 500px;
     overflow: auto;
-    background-color: rgba(223, 223, 223, 0.8);  
+    background-color: rgba(223, 223, 223, 0.8);
     border: 4px double #63ad77;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 #lyricDiv {
     width: 100%;
-   
+
 }
 
 
 .footnote {
     color: rgba(211, 211, 211, 0.514);
-    /* background-color: black; */
     background-image: linear-gradient(-180deg, #283643, #41be6d);
     text-align: center;
     width: 100%;
+    height: 75px;
     /* position: absolute; */
-    /* left: 0; */
-    /* bottom: 0; */
+    left: 0;
+    bottom: 0;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 75px;  
+    position: fixed;
     display: inline-block;
 }
+
+.footnote .btn {
+    width: 100px;
+    font-size: 1em;
+}
+
 
 
 /* alexs after here */
 
 .themes {
     background-image: url("../images/background.jpg");
-    background-position: center center;
+    /* background-position: center center; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -331,25 +322,114 @@ nav {
 
 
 
-#pics{
+#pics {
     display: flex;
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
+@media only screen and (max-width:450px) {
+    .row{
+        margin-right: 0;
+    }
+    .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 80%;
+        text-align: center;
+    }
+    #navBar .col-12{
+        max-width: 98%;
+    }
 
 
+    #page-container {
+        min-height: 102vh;
+    }
+    #navBar{
+        /* background: red; */
+        height: 110px;
+        /* position: fixed;
+        top: 0; */
+    }
+    #navBar h1,#navBar h2{
+        line-height: 1;
+        margin-bottom: 0;
+    }
+    #spatifyHeader{
+        font-size: 1.5em;
+    }
+    #navBar h2 {
+        font-size: 1.2em;
+    }
+    #spot{
+        min-width: 50px;
+        min-height: 50px;
+    }
+    #leftDiv,#rightDiv {
+        margin:auto auto;
+        margin-top: 10px;
+    }
+    
+    .albumNameClass {
+        font-size: 1.2em;
+    }
 
-/* background white, borders, spacing for the content sections */
-/* .sect {
-    background: white;
-    border: solid black 3px;
-    padding: 5px;
+    .footnote {
+        height: 115px;
+    }   
 
-} */
+    .footnote .btn {
+        width: 50px;
+        font-size: 0.6em;
+    }
+    p.footerNames{
+        font-size: 1em;
+    }
+   
+}
 
-/* spacing for the top two columns from the navbar */
-/* .vid,
-.lyrics {
-    margin-top: 10px;
-} */
+@media only screen and (max-width:330px){
+    
+
+    #page-container {
+        min-height: 107vh;
+    }
+    .footnote .btn {
+        width: 46px;
+        font-size: 0.5em;
+}
+}
+@media only screen and (max-width: 750px)  and  (min-width: 450px){
+    .row{
+        margin-right: 0;
+    }
+    .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 80%;
+        text-align: center;
+    }
+    #navBar .col-12{
+        max-width: 98%;
+    }
+    #leftDiv,#rightDiv {
+        margin:auto auto;
+        margin-top: 10px;
+    }
+    .footnote{
+        height: 100px;;
+    }
+}
+@media only screen and (max-width: 1024px)  and  (min-width: 750px){
+    #leftDiv,#rightDiv {
+     height: 820px;
+    }
+}
+
+@media only screen and (min-width: 1085px){
+    .row{
+        margin-right: 0;
+    }
+}
+
